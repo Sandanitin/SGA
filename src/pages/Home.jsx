@@ -28,80 +28,28 @@ export function Home() {
     <div style={{ background: '#ffffff' }}>
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="container">
-          <div style={{ marginBottom: '16px' }}>
-            <span className="badge badge-gold">
-              <Sparkles size={14} /> Official Sheshu Gundla Academy (SGA) Portal
-            </span>
-          </div>
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="hero-video-bg"
+        >
+          <source src="/307615_medium.mp4" type="video/mp4" />
+        </video>
 
+        <div className="hero-video-overlay" />
+
+        <div className="container hero-content">
           <h1 className="hero-title">
-            Find the Best Prop Firms & <span className="text-gold">Trading Deals</span>
+            Find Top Prop Firms & <span className="text-gold">Best Trading Deals</span> - 50+ Firms, Up to 80% OFF.
           </h1>
-
-          <p className="hero-subtitle">
-            Compare leading prop firms, discover exclusive deals, and find the right trading opportunity for your strategy.
-          </p>
-
-          <div className="hero-actions">
-            <Link to="/prop-firms" className="btn btn-navy btn-lg">
-              Explore Prop Firms <ArrowRight size={18} />
-            </Link>
-            <a href="#todays-deals" className="btn btn-gold btn-lg">
-              View Today's Deals <Flame size={18} />
-            </a>
-          </div>
-
-          {/* Stats Bar */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', maxWidth: '960px', margin: '40px auto 0' }}>
-            <div style={{ background: '#ffffff', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--navy-accent)' }}>50+</div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '600' }}>Verified Prop Firms</div>
-            </div>
-            <div style={{ background: '#ffffff', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--gold-primary)' }}>$15M+</div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '600' }}>Funded Accounts Claimed</div>
-            </div>
-            <div style={{ background: '#ffffff', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--green-accent)' }}>80% OFF</div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '600' }}>Max Flash Discounts</div>
-            </div>
-            <div style={{ background: '#ffffff', padding: '24px', borderRadius: '12px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)' }}>
-              <div style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--navy-dark)' }}>100%</div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '600' }}>Verified Payout Record</div>
-            </div>
-          </div>
-
         </div>
+
+
       </section>
 
-      {/* Today's Biggest & Largest Deals */}
-      <section id="todays-deals" className="section-padding bg-light">
-        <div className="container">
-          <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
-            <div>
-              <span className="badge badge-gold" style={{ marginBottom: '8px' }}>
-                <Flame size={12} /> HOT DISCOUNTS
-              </span>
-              <h2 className="section-title">Today's Biggest & Largest Deals</h2>
-              <p className="section-subtitle">Hand-picked evaluation deals with maximum promo coupon savings.</p>
-            </div>
-            <Link to="/prop-firms" className="btn btn-outline btn-sm">
-              View All Deals <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          {loading ? (
-            <Loading message="Loading today's deals..." />
-          ) : (
-            <div className="card-grid">
-              {topDeals.map((company) => (
-                <DealCard key={company.id} company={company} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* Best Firms In The Industry */}
       <section className="section-padding">
@@ -117,35 +65,31 @@ export function Home() {
           {loading ? (
             <Loading message="Loading prop firms..." />
           ) : (
-            <div className="card-grid" style={{ marginTop: '36px' }}>
-              {companies.map((company) => (
-                <CompanyCard key={company.id} company={company} />
-              ))}
+            <div className="dark-table-container" style={{ marginTop: '36px' }}>
+              <table className="dark-table">
+                <thead>
+                  <tr>
+                    <th>FIRM NAME</th>
+                    <th>RATING</th>
+                    <th>MAX ACCOUNTS</th>
+                    <th>TRADING PLATFORMS</th>
+                    <th>DISCOUNT</th>
+                    <th>DISCOUNT CODE</th>
+                    <th style={{ textAlign: 'center' }}>WEBSITE</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  {companies.map((company) => (
+                    <CompanyCard key={company.id} company={company} layout="dark-row" />
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>
       </section>
 
-      {/* Featured Trading Firms */}
-      <section className="section-padding bg-light">
-        <div className="container">
-          <div className="section-header">
-            <span className="badge badge-gold" style={{ marginBottom: '8px' }}>FEATURED LIST</span>
-            <h2 className="section-title">Featured Trading Firms</h2>
-            <p className="section-subtitle">Firms marked as verified partners by SGA Academy.</p>
-          </div>
-
-          {loading ? (
-            <Loading message="Loading featured firms..." />
-          ) : (
-            <div className="card-grid">
-              {featuredFirms.map((company) => (
-                <CompanyCard key={company.id} company={company} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding">
@@ -161,9 +105,10 @@ export function Home() {
               <Link to="/prop-firms" className="btn btn-gold btn-lg">
                 Compare Prop Firms
               </Link>
-              <Link to="/giveaways" className="btn btn-outline btn-lg" style={{ color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)' }}>
+              <Link to="/giveaways" className="btn btn-outline btn-lg" style={{ color: 'var(--navy-dark)', background: '#ffffff', borderColor: '#ffffff' }}>
                 <Gift size={20} /> Explore Giveaways
               </Link>
+
             </div>
           </div>
         </div>

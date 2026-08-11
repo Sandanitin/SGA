@@ -58,195 +58,207 @@ export function Giveaways() {
   };
 
   return (
-    <div style={{ background: '#ffffff', minHeight: '80vh', paddingBottom: '80px' }}>
-      {/* Hero Section */}
-      <section className="hero-section" style={{ padding: '50px 0 30px' }}>
-        <div className="container">
-          <div style={{ marginBottom: '12px' }}>
-            <span className="badge badge-gold">
-              <Gift size={14} /> EXCLUSIVE TRADER DRAW
-            </span>
-          </div>
+    <div style={{ background: '#ffffff', color: 'var(--text-main)', minHeight: '100vh', padding: '60px 0 80px' }}>
+      <div className="container" style={{ maxWidth: '1200px' }}>
+        <div className="giveaway-redesign-grid">
+          
+          {/* LEFT SIDE - 50% */}
+          <div className="giveaway-left-column">
+            {/* Badge */}
+            <div style={{ marginBottom: '16px' }}>
+              <span className="badge badge-gold">
+                <Gift size={14} /> EXCLUSIVE TRADER DRAW
+              </span>
+            </div>
 
-          <h1 className="hero-title" style={{ fontSize: '3.2rem' }}>
-            Enter Now to Win
-          </h1>
+            {/* Heading */}
+            <h1 className="hero-title" style={{ fontSize: '3.2rem', textAlign: 'left', margin: '0 0 20px', color: 'var(--text-main)' }}>
+              Enter Now to Win
+            </h1>
 
-          <div style={{ maxWidth: '820px', margin: '0 auto 36px', background: 'var(--bg-secondary)', padding: '28px 36px', borderRadius: '16px', border: '1px solid var(--border-color)' }}>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.8' }}>
+            {/* Description Text */}
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.02rem', lineHeight: '1.75', marginBottom: '32px' }}>
               At OnlyPropFirms, you know how we do it—always bringing you the best deals, discounts, and epic giveaways! We're all about helping traders reach new heights with offers you can't find anywhere else. Want in? It's easy—just fill out the form below for a chance to win evaluation accounts, course access, cash prizes, and more. Don't miss out—level up your trading journey today with OnlyPropFirms! Who will win? Could be you?
             </p>
+
+            {/* 4 Prize Highlights */}
+            <div className="prize-highlights-grid">
+              <div className="prize-highlight-item">
+                <Trophy size={20} color="var(--gold-primary)" />
+                <span>Evaluation Accounts</span>
+              </div>
+              <div className="prize-highlight-item">
+                <Sparkles size={20} color="var(--gold-primary)" />
+                <span>Course Access</span>
+              </div>
+              <div className="prize-highlight-item">
+                <ShieldCheck size={20} color="var(--gold-primary)" />
+                <span>Cash Prizes</span>
+              </div>
+              <div className="prize-highlight-item">
+                <Gift size={20} color="var(--gold-primary)" />
+                <span>And More</span>
+              </div>
+            </div>
+
           </div>
-        </div>
-      </section>
 
-      {/* Registration Form Card */}
-      <div className="container" style={{ maxWidth: '900px' }}>
-        <div style={{ background: '#ffffff', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '40px', boxShadow: 'var(--shadow-card)' }}>
-          
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '28px' }}>
-            <Trophy size={32} color="var(--gold-primary)" />
-            <div>
-              <h2 style={{ fontSize: '1.6rem' }}>Giveaway Registration Form</h2>
-              <p className="text-muted" style={{ fontSize: '0.9rem' }}>Fill in your info below to enter the live monthly prize draw.</p>
+          {/* RIGHT SIDE - 50% */}
+
+          <div className="giveaway-right-column">
+            <div className="giveaway-form-card">
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '24px' }}>
+                <Trophy size={28} color="var(--gold-primary)" />
+                <div>
+                  <h2 style={{ fontSize: '1.6rem', color: 'var(--text-main)' }}>Giveaway Registration Form</h2>
+                  <p className="text-muted" style={{ fontSize: '0.88rem' }}>Fill out your details to submit your entry into the active database.</p>
+                </div>
+              </div>
+
+              {/* Notifications */}
+              {successMessage && (
+                <div style={{ background: '#d1fae5', border: '1px solid #a7f3d0', padding: '14px 18px', borderRadius: '10px', color: '#065f46', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600' }}>
+                  <CheckCircle2 size={18} />
+                  <span>{successMessage}</span>
+                </div>
+              )}
+
+              {errorMessage && (
+                <div style={{ background: '#fee2e2', border: '1px solid #fca5a5', padding: '14px 18px', borderRadius: '10px', color: '#991b1b', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600' }}>
+                  <AlertCircle size={18} />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
+              {/* Registration Form */}
+              <form onSubmit={handleSubmit}>
+                <div className="form-two-col">
+                  {/* First Name */}
+                  <div className="form-group">
+                    <label className="form-label">First Name *</label>
+                    <div style={{ position: 'relative' }}>
+                      <User size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+                      <input 
+                        type="text" 
+                        name="first_name"
+                        className="form-input" 
+                        placeholder="e.g. Sheshu"
+                        value={formData.first_name}
+                        onChange={handleChange}
+                        style={{ paddingLeft: '40px' }}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Last Name */}
+                  <div className="form-group">
+                    <label className="form-label">Last Name *</label>
+                    <div style={{ position: 'relative' }}>
+                      <User size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+                      <input 
+                        type="text" 
+                        name="last_name"
+                        className="form-input" 
+                        placeholder="e.g. Gundla"
+                        value={formData.last_name}
+                        onChange={handleChange}
+                        style={{ paddingLeft: '40px' }}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-two-col">
+                  {/* YouTube Username */}
+                  <div className="form-group">
+                    <label className="form-label">YouTube Username *</label>
+                    <div style={{ position: 'relative' }}>
+                      <Youtube size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#ff0000' }} />
+                      <input 
+                        type="text" 
+                        name="youtube_username"
+                        className="form-input" 
+                        placeholder="e.g. @SheshuGundlaTrades"
+                        value={formData.youtube_username}
+                        onChange={handleChange}
+                        style={{ paddingLeft: '40px' }}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Email Address */}
+                  <div className="form-group">
+                    <label className="form-label">Email Address *</label>
+                    <div style={{ position: 'relative' }}>
+                      <Mail size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+                      <input 
+                        type="email" 
+                        name="email"
+                        className="form-input" 
+                        placeholder="trader@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        style={{ paddingLeft: '40px' }}
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Consent Checkbox */}
+                <div className="form-group" style={{ marginTop: '6px', marginBottom: '20px' }}>
+                  <label className="checkbox-group" style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.88rem', color: 'var(--text-muted)', cursor: 'pointer' }}>
+                    <input 
+                      type="checkbox" 
+                      name="consent" 
+                      checked={formData.consent}
+                      onChange={handleChange}
+                      style={{ accentColor: 'var(--gold-primary)', width: '18px', height: '18px', marginTop: '2px' }}
+                      required
+                    />
+                    <span>
+                      I confirm that I have subscribed to OnlyPropFirms & SGA YouTube, and I agree to the giveaway terms.
+                    </span>
+                  </label>
+                </div>
+
+                {/* Action Bar */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '24px', flexWrap: 'wrap', gap: '16px' }}>
+                  <button 
+                    type="button" 
+                    className="rules-link"
+                    style={{ background: 'none', border: 'none', color: 'var(--navy-accent)', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.9rem', fontWeight: '600', padding: 0 }}
+                    onClick={() => setShowRulesModal(true)}
+                  >
+                    Official Giveaway Rules
+                  </button>
+
+                  <button 
+                    type="submit" 
+                    className="btn btn-gold btn-lg" 
+                    disabled={loading}
+                    style={{ padding: '14px 32px' }}
+                  >
+                    {loading ? 'Submitting Entry...' : 'Enter Now'} <Sparkles size={18} />
+                  </button>
+                </div>
+              </form>
+
             </div>
           </div>
-
-          {/* Notifications */}
-          {successMessage && (
-            <div style={{ background: '#d1fae5', border: '1px solid #a7f3d0', padding: '16px', borderRadius: '10px', color: '#065f46', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600' }}>
-              <CheckCircle2 size={20} />
-              <span>{successMessage}</span>
-            </div>
-          )}
-
-          {errorMessage && (
-            <div style={{ background: '#fee2e2', border: '1px solid #fca5a5', padding: '16px', borderRadius: '10px', color: '#991b1b', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600' }}>
-              <AlertCircle size={20} />
-              <span>{errorMessage}</span>
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              
-              {/* First Name */}
-              <div className="form-group">
-                <label className="form-label">First Name *</label>
-                <div style={{ position: 'relative' }}>
-                  <User size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-                  <input 
-                    type="text" 
-                    name="first_name"
-                    className="form-input" 
-                    placeholder="First Name"
-                    value={formData.first_name}
-                    onChange={handleChange}
-                    style={{ paddingLeft: '40px' }}
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Last Name */}
-              <div className="form-group">
-                <label className="form-label">Last Name *</label>
-                <div style={{ position: 'relative' }}>
-                  <User size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-                  <input 
-                    type="text" 
-                    name="last_name"
-                    className="form-input" 
-                    placeholder="Last Name"
-                    value={formData.last_name}
-                    onChange={handleChange}
-                    style={{ paddingLeft: '40px' }}
-                    required
-                  />
-                </div>
-              </div>
-
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              
-              {/* YouTube Username */}
-              <div className="form-group">
-                <label className="form-label">YouTube Username *</label>
-                <div style={{ position: 'relative' }}>
-                  <Youtube size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#ff0000' }} />
-                  <input 
-                    type="text" 
-                    name="youtube_username"
-                    className="form-input" 
-                    placeholder="@YourYouTubeHandle"
-                    value={formData.youtube_username}
-                    onChange={handleChange}
-                    style={{ paddingLeft: '40px' }}
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Email Address */}
-              <div className="form-group">
-                <label className="form-label">Email Address *</label>
-                <div style={{ position: 'relative' }}>
-                  <Mail size={16} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-                  <input 
-                    type="email" 
-                    name="email"
-                    className="form-input" 
-                    placeholder="trader@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    style={{ paddingLeft: '40px' }}
-                    required
-                  />
-                </div>
-              </div>
-
-            </div>
-
-            {/* Consent Checkbox */}
-            <div className="form-group" style={{ marginTop: '10px' }}>
-              <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: 'var(--text-muted)', cursor: 'pointer' }}>
-                <input 
-                  type="checkbox" 
-                  name="consent" 
-                  checked={formData.consent}
-                  onChange={handleChange}
-                  style={{ accentColor: 'var(--navy-accent)', width: '18px', height: '18px', marginTop: '2px' }}
-                  required
-                />
-                <span>
-                  I confirm that I have subscribed to OnlyPropFirms & SGA YouTube, and I agree to the giveaway terms.
-                </span>
-              </label>
-            </div>
-
-            {/* Actions */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '28px', flexWrap: 'wrap', gap: '16px' }}>
-              <button 
-                type="button" 
-                style={{ background: 'none', border: 'none', color: 'var(--navy-accent)', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.9rem', fontWeight: '600' }}
-                onClick={() => setShowRulesModal(true)}
-              >
-                Official Giveaway Rules
-              </button>
-
-              <button 
-                type="submit" 
-                className="btn btn-gold btn-lg" 
-                disabled={loading}
-              >
-                {loading ? 'Submitting Entry...' : 'Enter Now'} <Sparkles size={18} />
-              </button>
-            </div>
-          </form>
 
         </div>
       </div>
 
       {/* Official Rules Modal */}
       {showRulesModal && (
-        <div className="modal-overlay" onClick={() => setShowRulesModal(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2 style={{ fontSize: '1.5rem', marginBottom: '16px' }}>Official Giveaway Rules</h2>
-            <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.7', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <p><strong>1. Eligibility:</strong> Open to active online traders worldwide aged 18 or older.</p>
-              <p><strong>2. Single Entry:</strong> Limit one (1) submission per trader per draw.</p>
-              <p><strong>3. Selection:</strong> Winners are selected randomly and announced on the SGA YouTube channel.</p>
-              <p><strong>4. Verification:</strong> Winners must respond within 7 days with valid channel verification.</p>
-            </div>
-            <div style={{ marginTop: '24px', textAlign: 'right' }}>
-              <button className="btn btn-navy btn-sm" onClick={() => setShowRulesModal(false)}>
-                Close Rules
-              </button>
-            </div>
-          </div>
-        </div>
+        <OfficialRulesModal onClose={() => setShowRulesModal(false)} />
       )}
     </div>
   );
+
 }

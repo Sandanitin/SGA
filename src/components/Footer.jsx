@@ -80,12 +80,24 @@ export function Footer() {
           <div>
             © {new Date().getFullYear()} OnlyPropFirms / Sheshu Gundla Academy (SGA). All rights reserved.
           </div>
+          <div style={{ fontSize: '0.85rem' }}>
+            Designed & Developed by{' '}
+            <a 
+              href="https://www.vikrin.com/" 
+              target="_blank" 
+              rel="noreferrer"
+              style={{ color: 'var(--navy-accent)', fontWeight: '700', textDecoration: 'none' }}
+            >
+              Vikrin Pvt Ltd
+            </a>
+          </div>
           <div style={{ display: 'flex', gap: '20px', fontSize: '0.8rem' }}>
             <span>Privacy Policy</span>
             <span>Terms & Conditions</span>
             <span>Risk Disclaimer</span>
           </div>
         </div>
+
       </div>
     </footer>
   );

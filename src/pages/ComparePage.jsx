@@ -49,27 +49,29 @@ export function ComparePage() {
   });
 
   return (
-    <div>
+    <div style={{ background: '#ffffff', color: 'var(--text-main)', minHeight: '100vh' }}>
       {/* Hero Section */}
-      <section className="hero-section" style={{ padding: '60px 0 40px' }}>
-        <div className="container">
-          <span className="badge badge-gold" style={{ marginBottom: '12px' }}>
-            <BarChart2 size={14} /> LIVE MATRIX
+      <section style={{ padding: '24px 0 12px', textAlign: 'center', background: '#ffffff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className="container" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <span className="badge badge-gold" style={{ marginBottom: '8px', display: 'inline-flex' }}>
+            <BarChart2 size={13} /> LIVE MATRIX
           </span>
-          <h1 className="hero-title" style={{ fontSize: '2.8rem' }}>
+          <h1 style={{ fontSize: '1.8rem', color: 'var(--text-main)', margin: '4px auto 6px', textAlign: 'center', fontWeight: '800' }}>
             Prop Firm <span className="text-gold">Comparison Engine</span>
           </h1>
-          <p className="hero-subtitle">
+          <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', margin: '0 auto', maxWidth: '600px', textAlign: 'center' }}>
             Compare evaluation fees, maximum funding limits, payout splits, and verified trader reviews across top proprietary trading firms.
           </p>
         </div>
       </section>
 
+
+
       {/* Search & Filter Control Bar */}
-      <section className="section-padding" style={{ paddingTop: '0' }}>
+      <section style={{ padding: '20px 0 40px' }}>
         <div className="container">
-          <div style={{ background: 'var(--bg-card)', padding: '24px', borderRadius: '16px', border: '1px solid var(--glass-border)', marginBottom: '32px' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', alignItems: 'center' }}>
+          <div style={{ background: '#ffffff', padding: '24px', borderRadius: '16px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)', marginBottom: '32px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', alignItems: 'center' }}>
               
               {/* Search Bar */}
               <div style={{ position: 'relative' }}>
@@ -124,40 +126,38 @@ export function ComparePage() {
             </div>
           </div>
 
-          {/* Dynamic Company Listings */}
-          <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-              Showing <strong style={{ color: '#fff' }}>{filteredCompanies.length}</strong> verified firms
-            </div>
-            {(searchTerm || fundingFilter !== 'ALL' || profitSplitFilter !== 'ALL') && (
-              <button 
-                className="btn btn-outline btn-sm"
-                onClick={() => {
-                  setSearchTerm('');
-                  setFundingFilter('ALL');
-                  setProfitSplitFilter('ALL');
-                }}
-              >
-                Reset Filters
-              </button>
-            )}
-          </div>
-
+          {/* Dynamic Table Layout */}
           {loading ? (
             <div style={{ textAlign: 'center', padding: '60px', color: 'var(--text-muted)' }}>
               <RefreshCw size={32} className="spin" style={{ marginBottom: '12px' }} />
               <p>Loading Prop Firm Catalog...</p>
             </div>
           ) : filteredCompanies.length === 0 ? (
-            <div style={{ background: 'var(--bg-card)', padding: '60px', borderRadius: '16px', textAlign: 'center', border: '1px dashed var(--glass-border)' }}>
+            <div style={{ background: '#ffffff', padding: '60px', borderRadius: '16px', textAlign: 'center', border: '1px dashed var(--border-color)' }}>
               <h3 style={{ marginBottom: '8px' }}>No Prop Firms Found</h3>
               <p className="text-muted">Try clearing search keywords or filters.</p>
             </div>
           ) : (
-            <div className="card-grid">
-              {filteredCompanies.map((company) => (
-                <CompanyCard key={company.id} company={company} />
-              ))}
+            <div className="dark-table-container">
+              <table className="dark-table">
+                <thead>
+                  <tr>
+                    <th>Firm Name</th>
+                    <th>Rating</th>
+                    <th>Max Accounts</th>
+                    <th>Trading Platforms</th>
+                    <th>Discount</th>
+                    <th>Discount Code</th>
+                    <th style={{ textAlign: 'center' }}>Website</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredCompanies.map((company) => (
+                    <CompanyCard key={company.id} company={company} layout="dark-row" />
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>
@@ -165,3 +165,5 @@ export function ComparePage() {
     </div>
   );
 }
+
+

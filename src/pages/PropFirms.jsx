@@ -43,19 +43,21 @@ export function PropFirms() {
   return (
     <div style={{ background: '#ffffff', minHeight: '80vh' }}>
       {/* Hero Section */}
-      <section className="hero-section" style={{ padding: '50px 0 30px' }}>
-        <div className="container">
-          <span className="badge badge-navy" style={{ marginBottom: '12px' }}>
-            <BarChart2 size={14} /> LIVE MATRIX
+      <section style={{ padding: '24px 0 12px', textAlign: 'center', background: '#ffffff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className="container" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <span className="badge badge-navy" style={{ marginBottom: '8px', display: 'inline-flex' }}>
+            <BarChart2 size={13} /> LIVE MATRIX
           </span>
-          <h1 className="hero-title" style={{ fontSize: '2.8rem' }}>
+          <h1 style={{ fontSize: '1.8rem', color: 'var(--text-main)', margin: '4px auto 6px', textAlign: 'center', fontWeight: '800' }}>
             Compare The Best Prop Firms
           </h1>
-          <p className="hero-subtitle">
+          <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', margin: '0 auto', maxWidth: '600px', textAlign: 'center' }}>
             Discover and compare leading proprietary trading firms, evaluation specs, profit splits, and verified trader discounts.
           </p>
         </div>
       </section>
+
+
 
       {/* Search & Filters */}
       <section className="section-padding" style={{ paddingTop: 0 }}>
@@ -121,7 +123,7 @@ export function PropFirms() {
             )}
           </div>
 
-          {/* Company Listing Cards */}
+          {/* Company Listing Table */}
           {loading ? (
             <Loading message="Loading prop firm directory..." />
           ) : filteredCompanies.length === 0 ? (
@@ -130,10 +132,25 @@ export function PropFirms() {
               <p className="text-muted">Try broadening your search keywords or resetting filters.</p>
             </div>
           ) : (
-            <div className="card-grid">
-              {filteredCompanies.map((company) => (
-                <CompanyCard key={company.id} company={company} />
-              ))}
+            <div className="dark-table-container">
+              <table className="dark-table">
+                <thead>
+                  <tr>
+                    <th>FIRM NAME</th>
+                    <th>RATING</th>
+                    <th>MAX ACCOUNTS</th>
+                    <th>TRADING PLATFORMS</th>
+                    <th>DISCOUNT</th>
+                    <th>DISCOUNT CODE</th>
+                    <th style={{ textAlign: 'center' }}>WEBSITE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredCompanies.map((company) => (
+                    <CompanyCard key={company.id} company={company} layout="dark-row" />
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>
@@ -141,3 +158,4 @@ export function PropFirms() {
     </div>
   );
 }
+

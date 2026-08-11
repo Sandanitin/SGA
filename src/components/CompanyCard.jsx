@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, ExternalLink, Copy, Check, Info, Flame, ShieldCheck } from 'lucide-react';
 
-export function CompanyCard({ company }) {
+export function CompanyCard({ company, layout = 'card' }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = (code) => {
@@ -12,6 +12,99 @@ export function CompanyCard({ company }) {
   };
 
   const slug = company.slug || String(company.id);
+
+  if (layout === 'horizontal-row' || layout === 'dark-row') {
+    return (
+      <tr>
+        {/* Firm Name & Logo */}
+        <td>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            {company.logo ? (
+              <img 
+                src={company.logo} 
+                alt={company.company_name || company.name} 
+                style={{ width: '42px', height: '42px', borderRadius: '8px', objectFit: 'cover', background: '#ffffff', border: '1px solid var(--border-color)' }} 
+              />
+            ) : (
+              <div style={{ width: '42px', height: '42px', borderRadius: '8px', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', color: 'var(--text-main)', border: '1px solid var(--border-color)' }}>
+                {(company.company_name || company.name || 'P').charAt(0)}
+              </div>
+            )}
+            <div>
+              <div style={{ fontWeight: '700', fontSize: '1.05rem', color: 'var(--text-main)' }}>
+                {company.company_name || company.name}
+              </div>
+              {company.featured === 1 && (
+                <span style={{ fontSize: '0.72rem', color: '#854d0e', fontWeight: '600', display: 'inline-flex', alignItems: 'center', gap: '4px', marginTop: '2px' }}>
+                  <Flame size={11} fill="var(--gold-primary)" color="var(--gold-primary)" /> Featured Partner
+                </span>
+              )}
+            </div>
+          </div>
+        </td>
+
+        {/* Rating */}
+        <td>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <div className="star-rating-gold">
+              {[...Array(5)].map((_, i) => (
+                <Star 
+                  key={i} 
+                  size={15} 
+                  fill={i < Math.floor(company.rating || 5) ? "var(--gold-primary)" : "none"} 
+                  color="var(--gold-primary)" 
+                />
+              ))}
+            </div>
+            <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: '600' }}>
+              {company.rating || '4.8'}
+            </span>
+          </div>
+        </td>
+
+        {/* Max Accounts */}
+        <td style={{ color: 'var(--text-main)', fontWeight: '700', fontSize: '1rem' }}>
+          {company.max_accounts || company.max_funding || '$200,000'}
+        </td>
+
+        {/* Trading Platforms */}
+        <td style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: '220px', lineHeight: '1.4' }}>
+          {company.platform || company.platforms || 'Tradovate, NinjaTrader'}
+        </td>
+
+        {/* Discount */}
+        <td style={{ color: 'var(--gold-hover)', fontWeight: '700', fontSize: '1rem' }}>
+          {company.discount || '10% OFF'}
+        </td>
+
+        {/* Discount Code */}
+        <td>
+          <button 
+            className="btn-code-pill"
+            onClick={() => handleCopy(company.promo_code || 'ONLYPROP')}
+          >
+            {copied ? <Check size={14} color="var(--green-accent)" /> : null}
+            {copied ? 'Copied!' : `Copy code: ${company.promo_code || 'ONLYPROP'}`}
+          </button>
+        </td>
+
+        {/* Website Action Button */}
+        <td style={{ textAlign: 'center' }}>
+          <a 
+            href={company.deal_url || company.website_url || '#'} 
+            target="_blank" 
+            rel="noreferrer" 
+            className="btn-neon"
+          >
+            Learn more
+          </a>
+        </td>
+
+      </tr>
+    );
+  }
+
+
 
   return (
     <div className="firm-card">
@@ -35,9 +128,9 @@ export function CompanyCard({ company }) {
 
       {/* Header Info */}
       <div className="firm-card-header">
-        <img src={company.logo} alt={company.company_name} className="firm-logo" />
+        <img src={company.logo} alt={company.company_name || company.name} className="firm-logo" />
         <div>
-          <h3 className="firm-name">{company.company_name}</h3>
+          <h3 className="firm-name">{company.company_name || company.name}</h3>
           <span className="text-muted" style={{ fontSize: '0.8rem' }}>
             {company.platform || 'MT4 / MT5 / cTrader'}
           </span>
@@ -46,7 +139,7 @@ export function CompanyCard({ company }) {
 
       {/* Short Description */}
       <p className="text-muted" style={{ fontSize: '0.88rem', margin: '8px 0 16px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-        {company.short_description}
+        {company.short_description || company.description}
       </p>
 
       {/* Key Specs */}
@@ -107,3 +200,4 @@ export function CompanyCard({ company }) {
     </div>
   );
 }
+

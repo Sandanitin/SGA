@@ -25,78 +25,28 @@ export function HomePage({ setActiveTab }) {
     <div>
       {/* Hero Banner */}
       <section className="hero-section">
-        <div className="container">
-          <div className="hero-badge">
-            <span className="badge badge-gold">
-              <Sparkles size={14} /> Official Sheshu Gundla Academy (SGA) Portal
-            </span>
-          </div>
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="hero-video-bg"
+        >
+          <source src="/307615_medium.mp4" type="video/mp4" />
+        </video>
 
+        <div className="hero-video-overlay" />
+
+        <div className="container hero-content">
           <h1 className="hero-title">
-            Unlock Today's Biggest & Largest <span className="text-gold">Prop Firm Deals</span> & Giveaways
+            Find Top Prop Firms & <span className="text-gold">Best Trading Deals</span> - 50+ Firms, Up to 80% OFF.
           </h1>
-
-          <p className="hero-subtitle">
-            Compare verified proprietary trading firms, access exclusive high-percentage discount coupons, and participate in epic evaluations giveaways to fund your trading journey.
-          </p>
-
-          <div className="hero-actions">
-            <button className="btn btn-gold btn-lg" onClick={() => setActiveTab('compare')}>
-              Compare All Prop Firms <ArrowRight size={18} />
-            </button>
-            <button className="btn btn-outline btn-lg" onClick={() => setActiveTab('giveaways')}>
-              <Gift size={18} color="var(--gold-light)" /> Enter Active Giveaway
-            </button>
-          </div>
-
-          {/* Stats Bar */}
-          <div className="hero-stats">
-            <div className="stat-card">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Verified Prop Firms</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">$15M+</div>
-              <div className="stat-label">Funded Accounts Claimed</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">80% OFF</div>
-              <div className="stat-label">Max Flash Discounts</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Verified Payout History</div>
-            </div>
-          </div>
         </div>
+
+
       </section>
 
-      {/* Today's Biggest & Largest Deals */}
-      <section className="section-padding" style={{ background: 'rgba(12, 24, 43, 0.4)' }}>
-        <div className="container">
-          <div className="section-header">
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <Flame color="var(--gold-primary)" size={24} />
-                <span className="badge badge-gold">LIMITED TIME OFFERS</span>
-              </div>
-              <h2 className="section-title">Today's Biggest & Largest Deals</h2>
-              <p className="section-subtitle">
-                Exclusive promo codes & highest discount rates hand-picked for traders today.
-              </p>
-            </div>
-            <button className="btn btn-outline btn-sm" onClick={() => setActiveTab('compare')}>
-              View All Offers <ArrowRight size={16} />
-            </button>
-          </div>
-
-          <div className="card-grid">
-            {topDeals.map((company) => (
-              <CompanyCard key={company.id} company={company} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* The Best Firms In The Industry */}
       <section className="section-padding">
@@ -109,13 +59,30 @@ export function HomePage({ setActiveTab }) {
             </p>
           </div>
 
-          <div className="card-grid" style={{ marginTop: '36px' }}>
-            {featuredFirms.map((company) => (
-              <CompanyCard key={company.id} company={company} />
-            ))}
+          <div className="dark-table-container" style={{ marginTop: '36px' }}>
+            <table className="dark-table">
+              <thead>
+                <tr>
+                  <th>FIRM NAME</th>
+                  <th>RATING</th>
+                  <th>MAX ACCOUNTS</th>
+                  <th>TRADING PLATFORMS</th>
+                  <th>DISCOUNT</th>
+                  <th>DISCOUNT CODE</th>
+                  <th style={{ textAlign: 'center' }}>WEBSITE</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {companies.map((company) => (
+                  <CompanyCard key={company.id} company={company} layout="dark-row" />
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
+
 
       {/* Featured Trading Firms Showcase */}
       <section className="section-padding" style={{ background: 'rgba(6, 13, 25, 0.8)', borderTop: '1px solid var(--glass-border)' }}>
