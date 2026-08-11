@@ -688,23 +688,200 @@ h1, h2, h3, h4, h5, h6 {
   gap: 16px;
 }
 
-/* Responsive Breakpoints for Giveaway Redesign */
+.mobile-toggle-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  color: var(--text-main);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mobile-toggle-btn:hover {
+  background: var(--bg-secondary);
+}
+
+/* Comprehensive Responsive Breakpoints */
 @media (max-width: 1024px) {
   .giveaway-redesign-grid {
     grid-template-columns: 45% 55%;
     gap: 32px;
   }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header & Navigation Mobile Drawer */
+  .mobile-toggle-btn {
+    display: inline-flex;
+  }
+
+  .nav-menu-container {
+    position: fixed;
+    top: 73px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    padding: 24px;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+  }
+
+  .nav-menu-container.mobile-open {
+    display: flex;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    width: 100%;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--bg-secondary);
+  }
+
+  .giveaway-header-btn {
+    display: none;
+  }
+
+  .admin-header-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* Typography & Hero Adjustments */
+  .hero-title, h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  /* Giveaway & Form Layouts */
   .giveaway-redesign-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 28px;
   }
+
+  .giveaway-form-card {
+    padding: 24px 18px;
+  }
+
   .form-two-col {
     grid-template-columns: 1fr;
   }
+
+  .prize-highlights-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .prize-highlight-item {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Grid Layouts */
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .firm-specs {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* Tables Mobile Optimization */
+  .dark-table-container, .data-table-container {
+    margin: 0 -16px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dark-table th, .dark-table td {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  .dark-table {
+    min-width: 750px;
+  }
+
+  /* Footer Layout */
+  .site-footer {
+    padding: 40px 0 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 38px;
+  }
+
+  .prize-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .firm-specs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .promo-badge-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
 
 
 

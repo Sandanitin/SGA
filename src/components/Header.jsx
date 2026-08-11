@@ -25,9 +25,9 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav>
-          <ul className={`nav-menu ${mobileOpen ? 'mobile-open' : ''}`}>
+        {/* Desktop & Mobile Navigation */}
+        <nav className={`nav-menu-container ${mobileOpen ? 'mobile-open' : ''}`}>
+          <ul className="nav-menu">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
@@ -52,20 +52,19 @@ export function Header() {
 
         {/* Actions & Mobile Menu Toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <Link to="/giveaways" className="btn btn-gold btn-sm">
+          <Link to="/giveaways" className="btn btn-gold btn-sm giveaway-header-btn">
             <Gift size={16} /> Win $100K Account
           </Link>
-          <Link to="/admin/login" className="btn btn-outline btn-sm" title="Admin Login">
+          <Link to="/admin/login" className="btn btn-outline btn-sm admin-header-btn" title="Admin Login">
             <UserCheck size={16} /> Admin
           </Link>
 
           <button 
-            className="btn btn-outline btn-sm"
-            style={{ display: 'none', padding: '8px' }}
+            className="mobile-toggle-btn"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
