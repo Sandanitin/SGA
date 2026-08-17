@@ -22,7 +22,7 @@ export function CompanyDetails() {
       const data = await companyService.getCompanyBySlug(slug);
       if (data) {
         setCompany(data);
-        document.title = `${data.company_name} Review & Promo Codes | OnlyPropFirms`;
+        document.title = `${data.company_name} Review & Promo Codes | SGA Academy`;
       } else {
         setError('Prop firm not found or inactive.');
       }
