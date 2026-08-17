@@ -43,16 +43,16 @@ export function PropFirms() {
   return (
     <div style={{ background: '#ffffff', minHeight: '80vh' }}>
       {/* Hero Section */}
-      <section style={{ padding: '24px 0 12px', textAlign: 'center', background: '#ffffff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <section style={{ padding: '36px 0 20px', textAlign: 'center', background: '#ffffff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div className="container" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <span className="badge badge-navy" style={{ marginBottom: '8px', display: 'inline-flex' }}>
-            <BarChart2 size={13} /> LIVE MATRIX
+          <span className="badge badge-navy" style={{ marginBottom: '10px', display: 'inline-flex' }}>
+            <BarChart2 size={13} /> PRACTICE & SKILL EVALUATION LABS
           </span>
-          <h1 style={{ fontSize: '1.8rem', color: 'var(--text-main)', margin: '4px auto 6px', textAlign: 'center', fontWeight: '800' }}>
-            Compare The Best Prop Firms
+          <h1 style={{ fontSize: '2.2rem', color: 'var(--text-main)', margin: '4px auto 10px', textAlign: 'center', fontWeight: '800' }}>
+            Capital Evaluation Matrix
           </h1>
-          <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', margin: '0 auto', maxWidth: '600px', textAlign: 'center' }}>
-            Discover and compare leading proprietary trading firms, evaluation specs, profit splits, and verified trader discounts.
+          <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', margin: '0 auto', maxWidth: '680px', textAlign: 'center' }}>
+            Compare evaluation parameters, drawdown thresholds, platform support, and rules to practice your trading edge in structured simulated environments.
           </p>
         </div>
       </section>

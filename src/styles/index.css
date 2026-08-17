@@ -214,20 +214,18 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #a7f3d0;
 }
 
-/* Hero Section with Video Background */
+/* Hero Section with Video Background & Educational Academic Styling */
 .hero-section {
   position: relative;
-  min-height: 680px;
-  padding: 260px 0;
+  min-height: 580px;
+  padding: 140px 0 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000000;
+  background: #0f172a;
   text-align: center;
   overflow: hidden;
 }
-
-
 
 .hero-video-bg {
   position: absolute;
@@ -237,12 +235,18 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   z-index: 1;
   object-fit: cover;
-  opacity: 1;
+  opacity: 0.25;
+  filter: grayscale(40%) contrast(110%);
 }
 
-
 .hero-video-overlay {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.95) 100%);
 }
 
 .hero-content {
@@ -250,24 +254,23 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 3;
 }
 
-
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #ffffff;
   max-width: 900px;
   margin: 16px auto 20px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  color: #cbd5e1;
-  max-width: 680px;
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 760px;
   margin: 0 auto 36px;
   font-weight: 400;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
 }
 
 .hero-actions {
@@ -275,8 +278,187 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
+}
+
+/* Brand Positioning Banner */
+.brand-positioning-bar {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+  border-y: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 24px 0;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+}
+
+.positioning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.positioning-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.positioning-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold-primary);
+}
+
+.positioning-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.positioning-sub {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Educational Cards & Pillars */
+.pillar-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: all 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--navy-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.pillar-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: #eff6ff;
+  color: var(--navy-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Mission & Story Box */
+.mission-container {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 24px;
+  padding: 48px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mission-quote-mark {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 120px;
+  line-height: 1;
+  color: rgba(212, 175, 55, 0.12);
+  font-family: Georgia, serif;
+  user-select: none;
+}
+
+.mission-quote {
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: #f1f5f9;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.mission-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.author-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.3rem;
+  border: 2px solid #ffffff;
+}
+
+/* Risk Management Highlight Section */
+.risk-section-bg {
+  background: #f8fafc;
+  border-y: 1px solid var(--border-color);
+}
+
+.risk-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid #059669;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.risk-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+/* Community Section Cards */
+.community-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.community-card:hover {
+  border-color: var(--gold-primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.badge-edu {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-gold-subtle {
+  background: #fefce8;
+  color: #854d0e;
+  border: 1px solid #fef08a;
 }
 
 

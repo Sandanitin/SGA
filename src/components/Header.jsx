@@ -8,9 +8,9 @@ export function Header() {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/prop-firms', label: 'Prop Firms' },
-    { path: '/giveaways', label: 'Giveaways', highlight: true },
-    { path: '/contact', label: 'Contact' }
+    { path: '/prop-firms', label: 'Evaluation Matrix' },
+    { path: '/giveaways', label: 'Student Giveaways', highlight: true },
+    { path: '/contact', label: 'Mentorship & Support' }
   ];
 
   return (
@@ -20,7 +20,7 @@ export function Header() {
         <Link to="/" className="logo-container" onClick={() => setMobileOpen(false)}>
           <img 
             src="/logo.png" 
-            alt="OnlyPropFirms / SGA Academy" 
+            alt="SGA Academy - Telugu Trading Education" 
             className="logo-img"
           />
         </Link>
@@ -40,7 +40,7 @@ export function Header() {
                     {item.label}
                     {item.highlight && (
                       <span className="badge badge-gold" style={{ marginLeft: '6px' }}>
-                        HOT
+                        NEW
                       </span>
                     )}
                   </Link>
@@ -52,8 +52,8 @@ export function Header() {
 
         {/* Actions & Mobile Menu Toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <Link to="/giveaways" className="btn btn-gold btn-sm giveaway-header-btn">
-            <Gift size={16} /> Win $100K Account
+          <Link to="/giveaways" className="btn btn-navy btn-sm giveaway-header-btn">
+            <Gift size={16} /> Student Giveaways
           </Link>
           <Link to="/admin/login" className="btn btn-outline btn-sm admin-header-btn" title="Admin Login">
             <UserCheck size={16} /> Admin

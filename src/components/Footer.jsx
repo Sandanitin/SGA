@@ -12,12 +12,12 @@ export function Footer() {
             <Link to="/">
               <img 
                 src="/logo.png" 
-                alt="OnlyPropFirms / SGA Academy" 
+                alt="SGA Academy - Sheshu Gundla Academy" 
                 style={{ height: '44px', marginBottom: '16px' }} 
               />
             </Link>
             <p className="text-muted" style={{ fontSize: '0.9rem', marginBottom: '20px', maxWidth: '340px' }}>
-              OnlyPropFirms by Sheshu Gundla Academy (SGA) is the premier directory for verified prop firm evaluations, maximum coupon discounts, and trader giveaways.
+              Sheshu Gundla Academy (SGA) is dedicated to helping Telugu students and aspiring traders build disciplined market skills through structured education, risk management, and community practice.
             </p>
             <div style={{ display: 'flex', gap: '10px' }}>
               <a href="https://youtube.com" target="_blank" rel="noreferrer" className="btn btn-outline btn-sm" aria-label="YouTube">
@@ -34,32 +34,32 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div>
-            <h4 style={{ marginBottom: '16px', color: 'var(--text-main)' }}>Navigation</h4>
+            <h4 style={{ marginBottom: '16px', color: 'var(--text-main)' }}>Education</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
               <li><Link to="/" className="text-muted" style={{ textDecoration: 'none' }}>Home</Link></li>
-              <li><Link to="/prop-firms" className="text-muted" style={{ textDecoration: 'none' }}>Prop Firms Comparison</Link></li>
-              <li><Link to="/giveaways" className="text-muted" style={{ textDecoration: 'none' }}>Monthly Giveaways</Link></li>
-              <li><Link to="/contact" className="text-muted" style={{ textDecoration: 'none' }}>Contact Us</Link></li>
-              <li><Link to="/admin/login" className="text-muted" style={{ textDecoration: 'none' }}>Admin Login</Link></li>
+              <li><Link to="/prop-firms" className="text-muted" style={{ textDecoration: 'none' }}>Evaluation Matrix</Link></li>
+              <li><Link to="/giveaways" className="text-muted" style={{ textDecoration: 'none' }}>Student Giveaways</Link></li>
+              <li><Link to="/contact" className="text-muted" style={{ textDecoration: 'none' }}>Mentorship & Contact</Link></li>
+              <li><Link to="/admin/login" className="text-muted" style={{ textDecoration: 'none' }}>Admin Access</Link></li>
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Core Foundations */}
           <div>
-            <h4 style={{ marginBottom: '16px', color: 'var(--text-main)' }}>Categories</h4>
+            <h4 style={{ marginBottom: '16px', color: 'var(--text-main)' }}>Core Pillars</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
-              <li className="text-muted">Instant Funding Firms</li>
-              <li className="text-muted">Futures Prop Firms</li>
-              <li className="text-muted">No Time Limits</li>
-              <li className="text-muted">90% Payout Splits</li>
+              <li className="text-muted">Market Mechanics & Structure</li>
+              <li className="text-muted">Risk & Drawdown Control</li>
+              <li className="text-muted">Trader Psychology & Mindset</li>
+              <li className="text-muted">Peer Community Practice</li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h4 style={{ marginBottom: '16px', color: 'var(--text-main)' }}>Stay Updated</h4>
+            <h4 style={{ marginBottom: '16px', color: 'var(--text-main)' }}>Academy Updates</h4>
             <p className="text-muted" style={{ fontSize: '0.85rem', marginBottom: '12px' }}>
-              Get instant alerts for high-percentage promo drops and trader giveaways.
+              Join our mailing list for weekly Telugu market insights and educational guides.
             </p>
             <div style={{ display: 'flex', gap: '8px' }}>
               <input 
@@ -75,10 +75,14 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Disclaimer */}
+        {/* Educational Risk Disclaimer & Copyright */}
+        <div style={{ background: '#f8fafc', padding: '16px 20px', borderRadius: '12px', marginBottom: '24px', fontSize: '0.82rem', color: '#64748b', border: '1px solid #e2e8f0', lineHeight: 1.6 }}>
+          <strong>Educational Disclaimer:</strong> Trading financial markets involves significant risk of capital loss and is not suitable for everyone. Sheshu Gundla Academy (SGA) provides structured educational content, market analysis tools, risk management frameworks, and community discussions strictly for informational and learning purposes. We do not provide financial, investment, or legal advice. Education before execution.
+        </div>
+
         <div className="footer-bottom">
           <div>
-            © {new Date().getFullYear()} OnlyPropFirms / Sheshu Gundla Academy (SGA). All rights reserved.
+            © {new Date().getFullYear()} Sheshu Gundla Academy (SGA). All rights reserved.
           </div>
           <div style={{ fontSize: '0.85rem' }}>
             Designed & Developed by{' '}
@@ -93,8 +97,8 @@ export function Footer() {
           </div>
           <div style={{ display: 'flex', gap: '20px', fontSize: '0.8rem' }}>
             <span>Privacy Policy</span>
-            <span>Terms & Conditions</span>
-            <span>Risk Disclaimer</span>
+            <span>Terms of Service</span>
+            <span>Educational Disclaimer</span>
           </div>
         </div>
 
