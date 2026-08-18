@@ -41,11 +41,11 @@ export function DealCard({ company }) {
       <div className="promo-badge-box">
         <div>
           <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block', textTransform: 'uppercase' }}>Promo Code</span>
-          <span className="code-text">{company.promo_code || 'ONLYPROP'}</span>
+          <span className="code-text">{company.promo_code || 'SGA'}</span>
         </div>
         <button 
           className="btn btn-outline btn-sm"
-          onClick={() => handleCopy(company.promo_code || 'ONLYPROP')}
+          onClick={() => handleCopy(company.promo_code || 'SGA')}
           style={{ padding: '6px 12px', fontSize: '0.8rem' }}
         >
           {copied ? <Check size={14} color="var(--green-accent)" /> : <Copy size={14} />}

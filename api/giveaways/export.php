@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../db.php';
 
 header("Content-Type: text/csv; charset=UTF-8");
-header("Content-Disposition: attachment; filename=onlypropfirms_giveaway_entries_" . date('Y-m-d') . ".csv");
+header("Content-Disposition: attachment; filename=sga_giveaway_entries_" . date('Y-m-d') . ".csv");
 
 $pdo = getDbConnection();
 $stmt = $pdo->prepare("SELECT id, first_name, last_name, youtube_username, email, consent, created_at FROM giveaway_entries ORDER BY created_at DESC");

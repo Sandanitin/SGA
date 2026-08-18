@@ -48,7 +48,7 @@ export function Giveaways() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `onlypropfirms_giveaways_${new Date().toISOString().substring(0,10)}.csv`);
+    link.setAttribute('download', `sga_giveaways_${new Date().toISOString().substring(0,10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -81,10 +81,10 @@ export function CompanyCard({ company, layout = 'card' }) {
         <td>
           <button 
             className="btn-code-pill"
-            onClick={() => handleCopy(company.promo_code || 'ONLYPROP')}
+            onClick={() => handleCopy(company.promo_code || 'SGA')}
           >
             {copied ? <Check size={14} color="var(--green-accent)" /> : null}
-            {copied ? 'Copied!' : `Copy code: ${company.promo_code || 'ONLYPROP'}`}
+            {copied ? 'Copied!' : `Copy code: ${company.promo_code || 'SGA'}`}
           </button>
         </td>
 
@@ -109,36 +109,38 @@ export function CompanyCard({ company, layout = 'card' }) {
   return (
     <div className="firm-card">
       {/* Top Badges */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
         {company.featured === 1 ? (
-          <span className="badge badge-gold">
-            <Flame size={12} /> Featured Partner
+          <span className="badge badge-gold" style={{ fontSize: '0.68rem', padding: '3px 7px' }}>
+            <Flame size={11} /> Featured Partner
           </span>
         ) : (
-          <span className="badge badge-navy">
-            <ShieldCheck size={12} /> Verified Firm
+          <span className="badge badge-navy" style={{ fontSize: '0.68rem', padding: '3px 7px' }}>
+            <ShieldCheck size={11} /> Verified Firm
           </span>
         )}
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#b89628', fontSize: '0.9rem', fontWeight: '700' }}>
-          <Star size={14} fill="var(--gold-primary)" />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#b89628', fontSize: '0.82rem', fontWeight: '700' }}>
+          <Star size={13} fill="var(--gold-primary)" />
           {company.rating || 4.8}
         </div>
       </div>
 
       {/* Header Info */}
-      <div className="firm-card-header">
+      <div className="firm-card-header" style={{ minHeight: '44px', alignItems: 'center' }}>
         <img src={company.logo} alt={company.company_name || company.name} className="firm-logo" />
-        <div>
-          <h3 className="firm-name">{company.company_name || company.name}</h3>
-          <span className="text-muted" style={{ fontSize: '0.8rem' }}>
+        <div style={{ overflow: 'hidden' }}>
+          <h3 className="firm-name" style={{ fontSize: '1.02rem', lineHeight: '1.25', margin: 0, fontWeight: '700', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            {company.company_name || company.name}
+          </h3>
+          <span className="text-muted" style={{ fontSize: '0.74rem', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginTop: '2px' }}>
             {company.platform || 'MT4 / MT5 / cTrader'}
           </span>
         </div>
       </div>
 
       {/* Short Description */}
-      <p className="text-muted" style={{ fontSize: '0.88rem', margin: '8px 0 16px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+      <p className="text-muted" style={{ fontSize: '0.8rem', minHeight: '36px', margin: '6px 0 10px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', lineHeight: '1.35' }}>
         {company.short_description || company.description}
       </p>
 
@@ -164,37 +166,37 @@ export function CompanyCard({ company, layout = 'card' }) {
 
       {/* Promo Code Box */}
       <div className="promo-badge-box">
-        <div>
-          <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block', textTransform: 'uppercase' }}>Use Coupon Code</span>
-          <span className="code-text">{company.promo_code || 'ONLYPROP'}</span>
+        <div style={{ overflow: 'hidden' }}>
+          <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.2px' }}>Use Coupon Code</span>
+          <span className="code-text" style={{ fontSize: '0.82rem' }}>{company.promo_code || 'SGA'}</span>
         </div>
         <button 
           className="btn btn-outline btn-sm"
-          onClick={() => handleCopy(company.promo_code || 'ONLYPROP')}
-          style={{ padding: '6px 12px', fontSize: '0.8rem' }}
+          onClick={() => handleCopy(company.promo_code || 'SGA')}
+          style={{ padding: '4px 8px', fontSize: '0.75rem', gap: '4px', minWidth: '58px' }}
         >
-          {copied ? <Check size={14} color="var(--green-accent)" /> : <Copy size={14} />}
-          {copied ? 'Copied!' : 'Copy'}
+          {copied ? <Check size={12} color="var(--green-accent)" /> : <Copy size={12} />}
+          {copied ? 'Copied' : 'Copy'}
         </button>
       </div>
 
       {/* Action Buttons */}
-      <div style={{ display: 'flex', gap: '10px', marginTop: 'auto' }}>
+      <div style={{ display: 'flex', gap: '6px', marginTop: 'auto', paddingTop: '4px' }}>
         <Link 
           to={`/prop-firms/${slug}`} 
           className="btn btn-outline btn-sm" 
-          style={{ flex: 1 }}
+          style={{ flex: 1, padding: '7px 4px', fontSize: '0.78rem', gap: '4px', justifyContent: 'center' }}
         >
-          <Info size={14} /> View Details
+          <Info size={13} /> View Details
         </Link>
         <a 
           href={company.deal_url || company.website_url || '#'} 
           target="_blank" 
           rel="noreferrer" 
           className="btn btn-gold btn-sm" 
-          style={{ flex: 1 }}
+          style={{ flex: 1, padding: '7px 4px', fontSize: '0.78rem', gap: '4px', justifyContent: 'center' }}
         >
-          Get Deal <ExternalLink size={14} />
+          Get Deal <ExternalLink size={13} />
         </a>
       </div>
     </div>

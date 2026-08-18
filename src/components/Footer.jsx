@@ -17,7 +17,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted" style={{ fontSize: '0.9rem', marginBottom: '20px', maxWidth: '340px' }}>
-              Sheshu Gundla Academy (SGA) is dedicated to helping Telugu students and aspiring traders build disciplined market skills through structured education, risk management, and community practice.
+              Sheshu Gundla Academy (SGA) is dedicated to helping unemployed youth, job seekers, and aspiring traders build disciplined market skills through structured education, risk management, and community practice.
             </p>
             <div style={{ display: 'flex', gap: '10px' }}>
               <a href="https://youtube.com" target="_blank" rel="noreferrer" className="btn btn-outline btn-sm" aria-label="YouTube">
@@ -38,7 +38,7 @@ export function Footer() {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
               <li><Link to="/" className="text-muted" style={{ textDecoration: 'none' }}>Home</Link></li>
               <li><Link to="/prop-firms" className="text-muted" style={{ textDecoration: 'none' }}>Evaluation Matrix</Link></li>
-              <li><Link to="/giveaways" className="text-muted" style={{ textDecoration: 'none' }}>Student Giveaways</Link></li>
+              <li><Link to="/giveaways" className="text-muted" style={{ textDecoration: 'none' }}>Giveaways</Link></li>
               <li><Link to="/contact" className="text-muted" style={{ textDecoration: 'none' }}>Mentorship & Contact</Link></li>
               <li><Link to="/admin/login" className="text-muted" style={{ textDecoration: 'none' }}>Admin Access</Link></li>
             </ul>

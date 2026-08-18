@@ -29,10 +29,10 @@ export function Login() {
     <div style={{ background: 'var(--bg-secondary)', minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 20px' }}>
       <div style={{ background: '#ffffff', padding: '40px', borderRadius: '20px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '440px', boxShadow: 'var(--shadow-card)' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <img src="/logo.png" alt="SGA / OnlyPropFirms" style={{ height: '48px', marginBottom: '16px' }} />
+          <img src="/logo.png" alt="SGA" style={{ height: '48px', marginBottom: '16px' }} />
           <h2 style={{ fontSize: '1.6rem' }}>Admin Portal Login</h2>
           <p className="text-muted" style={{ fontSize: '0.85rem', marginTop: '4px' }}>
-            Secure management dashboard for OnlyPropFirms.
+            Secure management dashboard for SGA.
           </p>
         </div>
 

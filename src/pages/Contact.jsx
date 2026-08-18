@@ -14,7 +14,7 @@ export function Contact() {
       <div className="container" style={{ maxWidth: '800px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <span className="badge badge-navy" style={{ marginBottom: '12px' }}>SUPPORT & INQUIRIES</span>
-          <h1 style={{ fontSize: '2.8rem' }}>Contact OnlyPropFirms & SGA</h1>
+          <h1 style={{ fontSize: '2.8rem' }}>Contact SGA</h1>
           <p className="text-muted" style={{ fontSize: '1.05rem', marginTop: '8px' }}>
             Have questions about prop firm deals or giveaway partnerships? Reach out to our team.
           </p>

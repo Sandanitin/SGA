@@ -57,10 +57,10 @@ export function CompanyModal({ company, onClose }) {
         {/* Promo Discount Box */}
         <div style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px dashed var(--gold-primary)', padding: '16px', borderRadius: '12px', marginBottom: '24px', textAlign: 'center' }}>
           <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>
-            Exclusive SGA / OnlyPropFirms Coupon
+            Exclusive SGA Coupon
           </span>
           <div style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--gold-light)', letterSpacing: '2px', fontFamily: 'monospace' }}>
-            {company.discount_code || 'OPF10'} ({company.discount_percentage || '10% OFF'})
+            {company.discount_code || 'SGA10'} ({company.discount_percentage || '10% OFF'})
           </div>
         </div>
 

@@ -16,7 +16,7 @@ export function OfficialRulesModal({ onClose }) {
 
         <div className="text-muted" style={{ fontSize: '0.9rem', lineHeight: '1.7', display: 'flex', flexDirection: 'column', gap: '14px' }}>
           <p>
-            <strong style={{ color: '#fff' }}>1. Eligibility:</strong> OnlyPropFirms & SGA Giveaways are open to legal residents and active online traders worldwide aged 18 or older at the time of entry.
+            <strong style={{ color: '#fff' }}>1. Eligibility:</strong> SGA Giveaways are open to legal residents and active online traders worldwide aged 18 or older at the time of entry.
           </p>
           <p>
             <strong style={{ color: '#fff' }}>2. Entry Limit:</strong> Limit one (1) entry per trader per giveaway draw. Multiple submissions with duplicate YouTube handles or email addresses will be disqualified.

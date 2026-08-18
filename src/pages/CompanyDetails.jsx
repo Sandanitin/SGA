@@ -130,9 +130,9 @@ export function CompanyDetails() {
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', textTransform: 'uppercase', fontWeight: '600' }}>
                 Exclusive SGA Promo Code
               </span>
-              <span className="code-text" style={{ fontSize: '1.4rem' }}>{company.promo_code || 'ONLYPROP'}</span>
+              <span className="code-text" style={{ fontSize: '1.4rem' }}>{company.promo_code || 'SGA'}</span>
             </div>
-            <button className="btn btn-outline" onClick={() => handleCopy(company.promo_code || 'ONLYPROP')}>
+            <button className="btn btn-outline" onClick={() => handleCopy(company.promo_code || 'SGA')}>
               {copied ? <Check size={16} color="var(--green-accent)" /> : <Copy size={16} />}
               {copied ? 'Coupon Copied!' : 'Copy Code'}
             </button>

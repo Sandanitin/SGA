@@ -14,6 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'onlypropfirms_db');
-define('ADMIN_SECRET', 'opf_sga_secret_key_2026');
+define('DB_NAME', 'sga_db');
+define('ADMIN_SECRET', 'sga_secret_key_2026');
 ?>

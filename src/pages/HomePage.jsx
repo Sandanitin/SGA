@@ -89,7 +89,7 @@ export function HomePage({ setActiveTab }) {
         <div className="container">
           <div className="section-header">
             <div>
-              <h2 className="section-title">Why Trust OnlyPropFirms & SGA?</h2>
+              <h2 className="section-title">Why Trust SGA?</h2>
               <p className="section-subtitle">Empowering traders with transparent specs and real community value.</p>
             </div>
           </div>

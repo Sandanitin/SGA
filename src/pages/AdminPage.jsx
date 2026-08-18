@@ -149,7 +149,7 @@ export function AdminPage() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `onlypropfirms_giveaway_entries_${new Date().toISOString().substring(0, 10)}.csv`);
+    link.setAttribute('download', `sga_giveaway_entries_${new Date().toISOString().substring(0, 10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -170,10 +170,10 @@ export function AdminPage() {
       <div style={{ padding: '80px 20px', minHeight: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ background: 'var(--bg-card)', padding: '40px', borderRadius: '20px', border: '1px solid var(--border-color)', width: '100%', maxWidth: '440px', boxShadow: 'var(--shadow-card)' }}>
           <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-            <img src="/logo.png" alt="SGA / OnlyPropFirms" style={{ height: '48px', marginBottom: '16px' }} />
+            <img src="/logo.png" alt="SGA" style={{ height: '48px', marginBottom: '16px' }} />
             <h2 style={{ fontSize: '1.6rem' }}>Admin Portal Login</h2>
             <p className="text-muted" style={{ fontSize: '0.85rem', marginTop: '4px' }}>
-              Secure management dashboard for OnlyPropFirms & SGA.
+              Secure management dashboard for SGA.
             </p>
           </div>
 

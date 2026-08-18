@@ -79,7 +79,7 @@ export function GiveawaysPage() {
 
             {/* Description Text */}
             <p style={{ color: 'var(--text-muted)', fontSize: '1.02rem', lineHeight: '1.75', marginBottom: '32px' }}>
-              At OnlyPropFirms, you know how we do it—always bringing you the best deals, discounts, and epic giveaways! We're all about helping traders reach new heights with offers you can't find anywhere else. Want in? It's easy—just fill out the form below for a chance to win evaluation accounts, course access, cash prizes, and more. Don't miss out—level up your trading journey today with OnlyPropFirms! Who will win? Could be you?
+              At SGA, you know how we do it—always bringing you the best deals, discounts, and epic giveaways! We're all about helping traders reach new heights with offers you can't find anywhere else. Want in? It's easy—just fill out the form below for a chance to win evaluation accounts, course access, cash prizes, and more. Don't miss out—level up your trading journey today with SGA! Who will win? Could be you?
             </p>
 
             {/* 4 Prize Highlights */}
@@ -222,7 +222,7 @@ export function GiveawaysPage() {
                       required
                     />
                     <span>
-                      I confirm that I have subscribed to OnlyPropFirms & SGA YouTube, and I agree to the giveaway terms.
+                      I confirm that I have subscribed to SGA YouTube, and I agree to the giveaway terms.
                     </span>
                   </label>
                 </div>

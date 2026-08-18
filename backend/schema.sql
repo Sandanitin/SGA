@@ -1,6 +1,6 @@
 -- Database Creation
-CREATE DATABASE IF NOT EXISTS `onlypropfirms_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `onlypropfirms_db`;
+CREATE DATABASE IF NOT EXISTS `sga_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `sga_db`;
 
 -- 1. Admins Table
 CREATE TABLE IF NOT EXISTS `admins` (
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 
 -- Seed Default Admin: admin / admin123 (bcrypt hash)
 INSERT INTO `admins` (`username`, `email`, `password`) VALUES
-('admin', 'admin@onlypropfirms.com', '$2y$10$4.a8lE/V5P3R.fN1Bq4GauJtPzC3Lh3U3v3G1T2O5M7N9P0Q1R2S3')
+('admin', 'admin@sga.com', '$2y$10$4.a8lE/V5P3R.fN1Bq4GauJtPzC3Lh3U3v3G1T2O5M7N9P0Q1R2S3')
 ON DUPLICATE KEY UPDATE `username`=`username`;
 
 -- 2. Companies Table
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `companies` (
   `full_description` TEXT NOT NULL,
   `website_url` VARCHAR(500) NOT NULL,
   `discount` VARCHAR(100) DEFAULT '10% OFF',
-  `promo_code` VARCHAR(100) DEFAULT 'ONLYPROP',
+  `promo_code` VARCHAR(100) DEFAULT 'SGA',
   `deal_url` VARCHAR(500) NOT NULL,
   `featured` TINYINT(1) DEFAULT 0,
   `status` ENUM('active', 'inactive') DEFAULT 'active',
@@ -47,7 +47,7 @@ VALUES
 ('FTMO', 'ftmo', 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&auto=format&fit=crop&q=80', 
 'Industry leading prop firm with up to 90% profit split, instant scaling up to $2,000,000, and fast bi-weekly payouts.', 
 'FTMO is a widely acclaimed proprietary trading platform operating globally. Traders receive evaluation accounts up to $200,000 with comprehensive educational resources, performance coaching, and top-tier liquidity execution.', 
-'https://ftmo.com', '10% OFF', 'ONLYPROP', 'https://ftmo.com', 1, 'active', '$200,000', '90/10', '$170', 4.9, 'MT4, MT5, cTrader, DXtrade'),
+'https://ftmo.com', '10% OFF', 'SGA', 'https://ftmo.com', 1, 'active', '$200,000', '90/10', '$170', 4.9, 'MT4, MT5, cTrader, DXtrade'),
 
 ('Funding Pips', 'funding-pips', 'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=200&auto=format&fit=crop&q=80', 
 'Built by traders for traders. Lowest evaluation fees, zero minimum trading days, and 5-day payout cycles.', 
@@ -62,7 +62,7 @@ VALUES
 ('The 5%ers', 'the-5ers', 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=200&auto=format&fit=crop&q=80', 
 'Hyper-growth account scaling, instant real capital funding, and risk-free scaling program for forex traders.', 
 'The 5%ers offers immediate funding models and traditional evaluation pathways designed for long-term career traders.', 
-'https://the5ers.com', '10% OFF', 'FIVEOPF', 'https://the5ers.com', 0, 'active', '$4,000,000', '100%', '$95', 4.8, 'MT5'),
+'https://the5ers.com', '10% OFF', 'FIVESGA', 'https://the5ers.com', 0, 'active', '$4,000,000', '100%', '$95', 4.8, 'MT5'),
 
 ('FundedNext', 'fundednext', 'https://images.unsplash.com/photo-1618042164219-62c820f10723?w=200&auto=format&fit=crop&q=80', 
 'Get paid 15% profit split even during the evaluation phase! No time limits and raw spread execution.', 

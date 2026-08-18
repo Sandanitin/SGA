@@ -58,7 +58,7 @@ export function Home() {
           <div style={{ marginBottom: '16px' }}>
             <span className="badge badge-edu" style={{ fontSize: '0.85rem', padding: '6px 16px', letterSpacing: '0.5px' }}>
               <BookOpen size={14} style={{ marginRight: '6px' }} />
-              SGA TRADING ACADEMY • TELUGU STUDENT INITIATIVE
+              SGA TRADING ACADEMY • TELUGU UNEMPLOYED & JOB SEEKERS INITIATIVE
             </span>
           </div>
 
@@ -68,7 +68,7 @@ export function Home() {
           </h1>
 
           <p className="hero-subtitle">
-            Helping Telugu students, beginners, and aspiring traders build disciplined market skills through structured trading education.
+            Helping unemployed youth, job seekers, beginners, and aspiring traders build disciplined market skills through structured trading education.
           </p>
 
           <div className="hero-actions">
@@ -163,7 +163,30 @@ export function Home() {
         </div>
       </section>
 
-      {/* 4. MISSION & STORY SECTION */}
+      {/* 4. STRUCTURED CAPITAL EVALUATION DIRECTORY MATRIX */}
+      <section className="section-padding bg-light">
+        <div className="container" style={{ maxWidth: '1440px' }}>
+          <div className="section-header" style={{ textAlign: 'center' }}>
+            <span className="badge badge-navy" style={{ marginBottom: '8px' }}>PRACTICE & SKILL TESTING LABS</span>
+            <h2 className="section-title">Capital Evaluation Matrix</h2>
+            <p className="section-subtitle" style={{ maxWidth: '650px', margin: '6px auto 0' }}>
+              Compare evaluation parameters, drawdown thresholds, platform support, and rules to practice your trading edge in structured simulated environments.
+            </p>
+          </div>
+
+          {loading ? (
+            <Loading message="Loading evaluation matrix..." />
+          ) : (
+            <div className="cards-5-grid" style={{ marginTop: '36px' }}>
+              {companies.map((company) => (
+                <CompanyCard key={company.id} company={company} layout="card" />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* 5. MISSION & STORY SECTION */}
       <section className="section-padding" style={{ background: '#ffffff' }}>
         <div className="container">
           <div className="mission-container">
@@ -176,7 +199,7 @@ export function Home() {
             </div>
 
             <blockquote className="mission-quote">
-              "My mission is to help Telugu students, beginners, and aspiring traders understand the financial markets through proper education, disciplined risk management, and practical market knowledge — not unrealistic promises of quick profits."
+              "My mission is to help unemployed youth, job seekers, beginners, and aspiring traders understand the financial markets through proper education, disciplined risk management, and practical market knowledge — not unrealistic promises of quick profits."
             </blockquote>
 
             <div className="mission-author">
@@ -190,7 +213,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* 5. RISK MANAGEMENT SPOTLIGHT */}
+      {/* 6. RISK MANAGEMENT SPOTLIGHT */}
       <section className="section-padding risk-section-bg">
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 44px' }}>
@@ -247,11 +270,11 @@ export function Home() {
         </div>
       </section>
 
-      {/* 6. COMMUNITY SECTION */}
+      {/* 7. COMMUNITY SECTION */}
       <section id="community" className="section-padding" style={{ background: '#ffffff' }}>
         <div className="container">
           <div className="section-header" style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 44px' }}>
-            <span className="badge badge-navy" style={{ marginBottom: '10px' }}>STUDENT COMMUNITY</span>
+            <span className="badge badge-navy" style={{ marginBottom: '10px' }}>UNEMPLOYED & JOB SEEKERS COMMUNITY</span>
             <h2 className="section-title" style={{ fontSize: '2.2rem', marginBottom: '12px' }}>
               Learn Together. Grow Together.
             </h2>
@@ -265,12 +288,12 @@ export function Home() {
               <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: '#eff6ff', color: 'var(--navy-accent)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginBottom: '18px' }}>
                 <Users size={26} />
               </div>
-              <h3 style={{ fontSize: '1.25rem', marginBottom: '10px' }}>Telugu Student Network</h3>
+              <h3 style={{ fontSize: '1.25rem', marginBottom: '10px' }}>Unemployed & Job Seekers Network</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: '1.6', marginBottom: '20px' }}>
-                Connect with Telugu youth and young adult traders (aged 18–35) sharing the same passion for market mastery and business skills.
+                Connect with Telugu youth, unemployed individuals, and job seekers sharing the same passion for market mastery and business skills.
               </p>
               <Link to="/contact" className="btn btn-outline btn-sm">
-                Join Student Group
+                Join Community Group
               </Link>
             </div>
 
@@ -303,44 +326,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* 7. STRUCTURED CAPITAL EVALUATION DIRECTORY MATRIX */}
-      <section className="section-padding bg-light">
-        <div className="container">
-          <div className="section-header" style={{ textAlign: 'center' }}>
-            <span className="badge badge-navy" style={{ marginBottom: '8px' }}>PRACTICE & SKILL TESTING LABS</span>
-            <h2 className="section-title">Capital Evaluation Matrix</h2>
-            <p className="section-subtitle" style={{ maxWidth: '650px', margin: '6px auto 0' }}>
-              Compare evaluation parameters, drawdown thresholds, platform support, and rules to practice your trading edge in structured simulated environments.
-            </p>
-          </div>
-
-          {loading ? (
-            <Loading message="Loading evaluation matrix..." />
-          ) : (
-            <div className="dark-table-container" style={{ marginTop: '36px' }}>
-              <table className="dark-table">
-                <thead>
-                  <tr>
-                    <th>FIRM NAME</th>
-                    <th>RATING</th>
-                    <th>MAX ACCOUNTS</th>
-                    <th>TRADING PLATFORMS</th>
-                    <th>STUDENT DISCOUNT</th>
-                    <th>PROMO CODE</th>
-                    <th style={{ textAlign: 'center' }}>DETAILS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {companies.map((company) => (
-                    <CompanyCard key={company.id} company={company} layout="dark-row" />
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* 8. ACADEMY CTA BANNER */}
       <section className="section-padding">
         <div className="container">
@@ -349,7 +334,7 @@ export function Home() {
               Ready to Build Your Trading Skills?
             </h2>
             <p style={{ color: '#94a3b8', maxWidth: '640px', margin: '0 auto 32px', fontSize: '1.1rem' }}>
-              Join hundreds of Telugu students and aspiring traders learning market mechanics, capital protection, and disciplined trade execution with SGA Academy.
+              Join hundreds of unemployed youth, job seekers, and aspiring traders learning market mechanics, capital protection, and disciplined trade execution with SGA Academy.
             </p>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/contact" className="btn btn-gold btn-lg">

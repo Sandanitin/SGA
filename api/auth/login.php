@@ -13,14 +13,14 @@ if (empty($username) || empty($password)) {
 }
 
 // Master demo login fallback for zero-friction setup
-if (($username === 'admin' || $username === 'admin@onlypropfirms.com') && $password === 'admin123') {
+if (($username === 'admin' || $username === 'admin@sga.com') && $password === 'admin123') {
     $_SESSION['admin_logged_in'] = true;
     $_SESSION['admin_user'] = 'admin';
     echo json_encode([
         "success" => true,
         "message" => "Admin authentication successful",
         "token" => md5("admin_token_" . time()),
-        "user" => ["username" => "admin", "email" => "admin@onlypropfirms.com"]
+        "user" => ["username" => "admin", "email" => "admin@sga.com"]
     ]);
     exit();
 }

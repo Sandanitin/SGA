@@ -61,7 +61,7 @@ export function PropFirms() {
 
       {/* Search & Filters */}
       <section className="section-padding" style={{ paddingTop: 0 }}>
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1440px' }}>
           <div style={{ background: '#ffffff', padding: '24px', borderRadius: '16px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)', marginBottom: '32px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', alignItems: 'center' }}>
               
@@ -132,25 +132,10 @@ export function PropFirms() {
               <p className="text-muted">Try broadening your search keywords or resetting filters.</p>
             </div>
           ) : (
-            <div className="dark-table-container">
-              <table className="dark-table">
-                <thead>
-                  <tr>
-                    <th>FIRM NAME</th>
-                    <th>RATING</th>
-                    <th>MAX ACCOUNTS</th>
-                    <th>TRADING PLATFORMS</th>
-                    <th>DISCOUNT</th>
-                    <th>DISCOUNT CODE</th>
-                    <th style={{ textAlign: 'center' }}>WEBSITE</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredCompanies.map((company) => (
-                    <CompanyCard key={company.id} company={company} layout="dark-row" />
-                  ))}
-                </tbody>
-              </table>
+            <div className="cards-5-grid">
+              {filteredCompanies.map((company) => (
+                <CompanyCard key={company.id} company={company} layout="card" />
+              ))}
             </div>
           )}
         </div>

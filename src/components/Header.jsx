@@ -9,7 +9,7 @@ export function Header() {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/prop-firms', label: 'Evaluation Matrix' },
-    { path: '/giveaways', label: 'Student Giveaways', highlight: true },
+    { path: '/giveaways', label: 'Giveaways', highlight: true },
     { path: '/contact', label: 'Mentorship & Support' }
   ];
 
@@ -53,7 +53,7 @@ export function Header() {
         {/* Actions & Mobile Menu Toggle */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <Link to="/giveaways" className="btn btn-navy btn-sm giveaway-header-btn">
-            <Gift size={16} /> Student Giveaways
+            <Gift size={16} /> Giveaways
           </Link>
           <Link to="/admin/login" className="btn btn-outline btn-sm admin-header-btn" title="Admin Login">
             <UserCheck size={16} /> Admin

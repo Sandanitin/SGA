@@ -11,7 +11,7 @@ const INITIAL_COMPANIES = [
     full_description: "FTMO is a widely acclaimed proprietary trading platform operating globally. Traders receive evaluation accounts up to $200,000 with comprehensive educational resources, performance coaching, and top-tier liquidity execution.",
     website_url: "https://ftmo.com",
     discount: "10% OFF",
-    promo_code: "ONLYPROP",
+    promo_code: "SGA",
     deal_url: "https://ftmo.com",
     featured: 1,
     status: "active",
@@ -68,7 +68,7 @@ const INITIAL_COMPANIES = [
     full_description: "The 5%ers offers immediate funding models and traditional evaluation pathways designed for long-term career traders.",
     website_url: "https://the5ers.com",
     discount: "10% OFF",
-    promo_code: "FIVEOPF",
+    promo_code: "FIVESGA",
     deal_url: "https://the5ers.com",
     featured: 0,
     status: "active",
@@ -333,11 +333,11 @@ export const authService = {
       }
     }
 
-    if ((username === 'admin' || username === 'admin@onlypropfirms.com') && password === 'admin123') {
+    if ((username === 'admin' || username === 'admin@sga.com') && password === 'admin123') {
       return {
         success: true,
         token: 'demo_jwt_token_' + Date.now(),
-        user: { username: 'admin', email: 'admin@onlypropfirms.com' }
+        user: { username: 'admin', email: 'admin@sga.com' }
       };
     }
     throw new Error('Invalid username or password');
