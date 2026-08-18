@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -11,6 +12,11 @@ export function Contact() {
 
   return (
     <div style={{ background: '#ffffff', minHeight: '80vh', padding: '60px 0' }}>
+      <SEO 
+        title="Contact Us - SGA Trading Academy"
+        description="Have questions about proprietary firm reviews, deals, or giveaways? Contact the SGA Trading Academy team."
+        canonicalUrl="https://sga-academy.vercel.app/contact"
+      />
       <div className="container" style={{ maxWidth: '800px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <span className="badge badge-navy" style={{ marginBottom: '12px' }}>SUPPORT & INQUIRIES</span>

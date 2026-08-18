@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Gift, Sparkles, CheckCircle2, AlertCircle, Trophy, User, Mail, Youtube, ShieldCheck } from 'lucide-react';
 import { giveawayService } from '../services/api';
+import { SEO } from '../components/SEO';
 
 export function Giveaways() {
   const [formData, setFormData] = useState({
@@ -35,30 +36,29 @@ export function Giveaways() {
     }
 
     if (!formData.consent) {
-      setErrorMessage('You must agree to the giveaway terms to enter.');
+      setErrorMessage('You must confirm subscription to SGA Telugu Youtube channel.');
       return;
     }
 
     setLoading(true);
-    try {
-      const res = await giveawayService.submitGiveaway(formData);
-      setSuccessMessage('Your entry has been submitted successfully.');
-      setFormData({
-        first_name: '',
-        last_name: '',
-        youtube_username: '',
-        email: '',
-        consent: false
-      });
-    } catch (err) {
-      setErrorMessage(err.message || 'An error occurred submitting your entry.');
-    } finally {
-      setLoading(false);
+    const result = await giveawayService.entryGiveaway(formData);
+    setLoading(false);
+
+    if (result.success) {
+      setSuccessMessage(result.message || 'Successfully entered the giveaway!');
+      setFormData({ first_name: '', last_name: '', youtube_username: '', email: '', consent: false });
+    } else {
+      setErrorMessage(result.message || 'Failed to enter giveaway. Please try again.');
     }
   };
 
   return (
-    <div style={{ background: '#ffffff', color: 'var(--text-main)', minHeight: '100vh', padding: '60px 0 80px' }}>
+    <div style={{ background: '#ffffff', minHeight: '80vh', padding: '36px 0 60px' }}>
+      <SEO 
+        title="Win Free Prop Firm Evaluation Accounts - SGA Giveaways"
+        description="Participate in SGA Trading Academy monthly giveaways to win free prop firm evaluation accounts and cash rewards."
+        canonicalUrl="https://sga-academy.vercel.app/giveaways"
+      />
       <div className="container" style={{ maxWidth: '1200px' }}>
         <div className="giveaway-redesign-grid">
           

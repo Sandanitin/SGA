@@ -3,6 +3,7 @@ import { Search, Filter, BarChart2 } from 'lucide-react';
 import { companyService } from '../services/api';
 import { CompanyCard } from '../components/CompanyCard';
 import { Loading } from '../components/Loading';
+import { SEO } from '../components/SEO';
 
 export function PropFirms() {
   const [companies, setCompanies] = useState([]);
@@ -42,6 +43,11 @@ export function PropFirms() {
 
   return (
     <div style={{ background: '#ffffff', minHeight: '80vh' }}>
+      <SEO 
+        title="Compare Best Proprietary Trading Firms - SGA Academy"
+        description="Compare evaluation parameters, drawdown thresholds, platform support, and rules of top prop firms to find the right evaluation account."
+        canonicalUrl="https://sga-academy.vercel.app/prop-firms"
+      />
       {/* Hero Section */}
       <section style={{ padding: '36px 0 20px', textAlign: 'center', background: '#ffffff', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div className="container" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

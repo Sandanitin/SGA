@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ExternalLink, Star, Copy, Check, ArrowLeft, ShieldCheck, DollarSign, Award, Layers } from 'lucide-react';
 import { companyService } from '../services/api';
 import { Loading } from '../components/Loading';
+import { SEO } from '../components/SEO';
 
 export function CompanyDetails() {
   const { slug } = useParams();
@@ -22,7 +23,6 @@ export function CompanyDetails() {
       const data = await companyService.getCompanyBySlug(slug);
       if (data) {
         setCompany(data);
-        document.title = `${data.company_name} Review & Promo Codes | SGA Academy`;
       } else {
         setError('Prop firm not found or inactive.');
       }
@@ -43,20 +43,23 @@ export function CompanyDetails() {
 
   if (error || !company) {
     return (
-      <div className="container" style={{ padding: '80px 20px', textAlign: 'center' }}>
-        <h2>Company Not Found</h2>
-        <p className="text-muted" style={{ margin: '12px 0 24px' }}>
-          {error || 'The requested prop firm page does not exist.'}
-        </p>
-        <Link to="/prop-firms" className="btn btn-navy">
-          <ArrowLeft size={16} /> Back to All Prop Firms
+      <div className="container" style={{ padding: '60px 20px', textAlign: 'center' }}>
+        <SEO title="Prop Firm Not Found - SGA Academy" />
+        <h2>{error || 'Prop firm not found.'}</h2>
+        <Link to="/prop-firms" className="btn btn-navy" style={{ marginTop: '20px', display: 'inline-flex' }}>
+          <ArrowLeft size={16} style={{ marginRight: '8px' }} /> Back to All Prop Firms
         </Link>
       </div>
     );
   }
 
   return (
-    <div style={{ background: '#ffffff', padding: '40px 0 80px' }}>
+    <div style={{ background: '#ffffff', minHeight: '80vh', padding: '40px 0 60px' }}>
+      <SEO 
+        title={`${company.company_name} Review, Promo Codes & Rules | SGA Academy`}
+        description={company.short_description || `Read in-depth review, evaluation rules, maximum drawdown, profit split, and discount promo codes for ${company.company_name}.`}
+        canonicalUrl={`https://sga-academy.vercel.app/prop-firms/${slug}`}
+      />
       <div className="container" style={{ maxWidth: '960px' }}>
         
         {/* Back Link */}

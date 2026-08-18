@@ -21,6 +21,7 @@ import {
 import { companyService } from '../services/api';
 import { CompanyCard } from '../components/CompanyCard';
 import { Loading } from '../components/Loading';
+import { SEO } from '../components/SEO';
 
 export function Home() {
   const [companies, setCompanies] = useState([]);
@@ -39,6 +40,11 @@ export function Home() {
 
   return (
     <div style={{ background: '#ffffff', color: 'var(--text-main)' }}>
+      <SEO 
+        title="SGA Trading Academy - Master Market Discipline & Prop Firm Comparisons"
+        description="Empowering traders with structured trading education, proprietary firm evaluation matrix, and free account giveaways."
+        canonicalUrl="https://sga-academy.vercel.app/"
+      />
       {/* 1. HERO SECTION - Educational Context */}
       <section className="hero-section">
         {/* Subtle Background Video */}
