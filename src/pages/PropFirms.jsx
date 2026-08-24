@@ -5,6 +5,8 @@ import { CompanyCard } from '../components/CompanyCard';
 import { Loading } from '../components/Loading';
 import { SEO } from '../components/SEO';
 
+import { WhyChooseUs } from '../components/WhyChooseUs';
+
 export function PropFirms() {
   const [companies, setCompanies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -146,6 +148,9 @@ export function PropFirms() {
           )}
         </div>
       </section>
+
+      {/* Why Traders Trust Us Section */}
+      <WhyChooseUs />
     </div>
   );
 }

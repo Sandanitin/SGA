@@ -22,6 +22,7 @@ import { companyService } from '../services/api';
 import { CompanyCard } from '../components/CompanyCard';
 import { Loading } from '../components/Loading';
 import { SEO } from '../components/SEO';
+import { WhyChooseUs } from '../components/WhyChooseUs';
 
 export function Home() {
   const [companies, setCompanies] = useState([]);
@@ -41,7 +42,7 @@ export function Home() {
   return (
     <div style={{ background: '#ffffff', color: 'var(--text-main)' }}>
       <SEO 
-        title="SGA Trading Academy - Master Market Discipline & Prop Firm Comparisons"
+        title="SGA Academy - Master Market Discipline & Prop Firm Comparisons"
         description="Empowering traders with structured trading education, proprietary firm evaluation matrix, and free account giveaways."
         canonicalUrl="https://sga-academy.vercel.app/"
       />
@@ -64,13 +65,13 @@ export function Home() {
           <div style={{ marginBottom: '16px' }}>
             <span className="badge badge-edu" style={{ fontSize: '0.85rem', padding: '6px 16px', letterSpacing: '0.5px' }}>
               <BookOpen size={14} style={{ marginRight: '6px' }} />
-              SGA TRADING ACADEMY • TELUGU UNEMPLOYED & JOB SEEKERS INITIATIVE
+              SGA ACADEMY • UNEMPLOYED & JOB SEEKERS INITIATIVE
             </span>
           </div>
 
           <h1 className="hero-title">
-            Learn the Market. <br />
-            <span className="text-gold">Trade with Discipline.</span>
+            Learn Like It's Your Job. <br />
+            <span className="text-gold">Build Skills with Discipline.</span>
           </h1>
 
           <p className="hero-subtitle">
@@ -79,10 +80,10 @@ export function Home() {
 
           <div className="hero-actions">
             <a href="#foundations" className="btn btn-gold btn-lg">
-              Explore Learning Pillars <ArrowRight size={18} />
+              START LEARNING FREE <ArrowRight size={18} />
             </a>
             <a href="#community" className="btn btn-outline btn-lg" style={{ background: 'rgba(255,255,255,0.1)', color: '#ffffff', borderColor: 'rgba(255,255,255,0.25)', backdropFilter: 'blur(8px)' }}>
-              <Users size={18} /> Join Telugu Community
+              <Users size={18} /> Join Community
             </a>
           </div>
         </div>
@@ -114,7 +115,7 @@ export function Home() {
           <div className="section-header" style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
             <span className="badge badge-navy" style={{ marginBottom: '12px' }}>CORE METHODOLOGY</span>
             <h2 className="section-title" style={{ fontSize: '2.4rem', marginBottom: '16px' }}>
-              Trading is a skill, not a shortcut.
+              Learn the Skill. Respect the Process.
             </h2>
             <p className="section-subtitle" style={{ fontSize: '1.1rem', color: 'var(--text-muted)' }}>
               We focus on building the right foundation: market understanding, risk management, trading psychology, discipline, and consistency.
@@ -191,6 +192,9 @@ export function Home() {
           )}
         </div>
       </section>
+
+      {/* Why Traders Trust SGA Section */}
+      <WhyChooseUs />
 
       {/* 5. MISSION & STORY SECTION */}
       <section className="section-padding" style={{ background: '#ffffff' }}>

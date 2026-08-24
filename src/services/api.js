@@ -4,44 +4,66 @@ import axios from 'axios';
 const INITIAL_COMPANIES = [
   {
     id: 1,
-    company_name: "FTMO",
-    slug: "ftmo",
+    company_name: "Lucid Trading",
+    slug: "lucid-trading",
     logo: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&auto=format&fit=crop&q=80",
-    short_description: "Industry leading prop firm with up to 90% profit split, instant scaling up to $2,000,000, and fast bi-weekly payouts.",
-    full_description: "FTMO is a widely acclaimed proprietary trading platform operating globally. Traders receive evaluation accounts up to $200,000 with comprehensive educational resources, performance coaching, and top-tier liquidity execution.",
-    website_url: "https://ftmo.com",
-    discount: "10% OFF",
-    promo_code: "SGA",
-    deal_url: "https://ftmo.com",
+    short_description: "DGT Trusted - Most Popular. 15-minute payouts, 90% profit split, instant funding, no consistency rule.",
+    full_description: "Lucid Trading is a premier futures prop trading firm providing instant funding, zero consistency rules, 90% profit splits, and ultra-fast 15-minute daily payouts.",
+    website_url: "https://lucidtrading.com",
+    discount: "40% OFF",
+    promo_code: "DGT",
+    deal_url: "https://lucidtrading.com",
     featured: 1,
     status: "active",
-    max_funding: "$200,000",
+    max_funding: "$750,000",
+    max_accounts: "5 ACCTS X $150K",
     profit_split: "90/10",
-    start_price: "$170",
-    rating: 4.9,
-    platform: "MT4, MT5, cTrader, DXtrade"
+    start_price: "$193",
+    rating: 4.8,
+    platform: "Tradovate, NinjaTrader"
   },
   {
     id: 2,
-    company_name: "Funding Pips",
-    slug: "funding-pips",
+    company_name: "Take Profit Trader",
+    slug: "take-profit-trader",
     logo: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=200&auto=format&fit=crop&q=80",
-    short_description: "Built by traders for traders. Lowest evaluation fees, zero minimum trading days, and 5-day payout cycles.",
-    full_description: "Funding Pips provides an accessible, trader-centric environment designed to maximize funded capital growth. Enjoy 5-day payout intervals, raw spreads, and flexible risk parameters.",
-    website_url: "https://fundingpips.com",
-    discount: "20% OFF",
-    promo_code: "PIPS20",
-    deal_url: "https://fundingpips.com",
+    short_description: "DGT Trusted - Best Daily Payouts. 1-hour payouts, 80% profit split, and trader-friendly evaluation rules.",
+    full_description: "Take Profit Trader gives futures traders direct access to funded accounts with daily payouts, 1-hour withdrawal speeds, and high profit share options.",
+    website_url: "https://takeprofittrader.com",
+    discount: "50% OFF",
+    promo_code: "DGT",
+    deal_url: "https://takeprofittrader.com",
     featured: 1,
     status: "active",
-    max_funding: "$300,000",
-    profit_split: "85/15 - 90%",
-    start_price: "$32",
-    rating: 4.8,
-    platform: "cTrader, Match-Trader"
+    max_funding: "$750,000",
+    max_accounts: "5 ACCTS X $150K",
+    profit_split: "80/20",
+    start_price: "$180",
+    rating: 4.7,
+    platform: "Tradovate, NinjaTrader, Rithmic"
   },
   {
     id: 3,
+    company_name: "Tradeify",
+    slug: "tradeify",
+    logo: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=200&auto=format&fit=crop&q=80",
+    short_description: "DGT Trusted - Best Instant Funding. 1-hour payouts, 90% profit split, instant funding, no consistency rule.",
+    full_description: "Tradeify specializes in instant funding evaluation models for futures traders, featuring 90% profit split, fast 1-hour payouts, and raw execution.",
+    website_url: "https://tradeify.co",
+    discount: "40% OFF",
+    promo_code: "DGT",
+    deal_url: "https://tradeify.co",
+    featured: 1,
+    status: "active",
+    max_funding: "$750,000",
+    max_accounts: "5 ACCTS X $150K",
+    profit_split: "90/10",
+    start_price: "$99",
+    rating: 4.7,
+    platform: "Tradovate, NinjaTrader"
+  },
+  {
+    id: 4,
     company_name: "Apex Trader Funding",
     slug: "apex-trader-funding",
     logo: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=200&auto=format&fit=crop&q=80",
@@ -58,44 +80,6 @@ const INITIAL_COMPANIES = [
     start_price: "$147",
     rating: 4.7,
     platform: "Rithmic, Tradovate, NinjaTrader"
-  },
-  {
-    id: 4,
-    company_name: "The 5%ers",
-    slug: "the-5ers",
-    logo: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=200&auto=format&fit=crop&q=80",
-    short_description: "Hyper-growth account scaling, instant real capital funding, and risk-free scaling program for forex traders.",
-    full_description: "The 5%ers offers immediate funding models and traditional evaluation pathways designed for long-term career traders.",
-    website_url: "https://the5ers.com",
-    discount: "10% OFF",
-    promo_code: "FIVESGA",
-    deal_url: "https://the5ers.com",
-    featured: 0,
-    status: "active",
-    max_funding: "$4,000,000",
-    profit_split: "100%",
-    start_price: "$95",
-    rating: 4.8,
-    platform: "MT5"
-  },
-  {
-    id: 5,
-    company_name: "FundedNext",
-    slug: "fundednext",
-    logo: "https://images.unsplash.com/photo-1618042164219-62c820f10723?w=200&auto=format&fit=crop&q=80",
-    short_description: "Get paid 15% profit split even during the evaluation phase! No time limits and raw spread execution.",
-    full_description: "FundedNext rewards consistent traders from day one with a unique 15% profit share during challenge phases, robust trading dashboards, and dedicated account manager support.",
-    website_url: "https://fundednext.com",
-    discount: "15% OFF",
-    promo_code: "NEXT15",
-    deal_url: "https://fundednext.com",
-    featured: 1,
-    status: "active",
-    max_funding: "$200,000",
-    profit_split: "90/10",
-    start_price: "$49",
-    rating: 4.9,
-    platform: "MT4, MT5, cTrader"
   }
 ];
 
@@ -136,13 +120,29 @@ const apiClient = axios.create({
   }
 });
 
+const CURRENT_COMPANIES_KEY = 'opf_companies_v5';
+
 const getLocal = (key, fallback) => {
+  // Purge old company keys to ensure updated firms load
+  ['opf_companies_v1', 'opf_companies_v2', 'opf_companies_v3', 'opf_companies_v4'].forEach(k => localStorage.removeItem(k));
+
   const data = localStorage.getItem(key);
   if (!data) {
     localStorage.setItem(key, JSON.stringify(fallback));
     return fallback;
   }
-  try { return JSON.parse(data); } catch (e) { return fallback; }
+  try { 
+    const parsed = JSON.parse(data);
+    // If cache has old companies like FTMO or FundedNext, replace with fallback
+    if (Array.isArray(parsed) && parsed.some(c => c.company_name === 'FTMO' || c.company_name === 'FundedNext' || c.company_name === 'Funding Pips')) {
+      localStorage.setItem(key, JSON.stringify(fallback));
+      return fallback;
+    }
+    return parsed;
+  } catch (e) { 
+    localStorage.setItem(key, JSON.stringify(fallback));
+    return fallback; 
+  }
 };
 
 const setLocal = (key, val) => localStorage.setItem(key, JSON.stringify(val));
@@ -157,7 +157,7 @@ export const companyService = {
       console.log('API offline, using local client DB for companies');
     }
 
-    let list = getLocal('opf_companies_v2', INITIAL_COMPANIES);
+    let list = getLocal(CURRENT_COMPANIES_KEY, INITIAL_COMPANIES);
     if (!params.admin) {
       list = list.filter(c => c.status === 'active');
     }
@@ -183,7 +183,7 @@ export const companyService = {
       console.log('API offline, resolving slug locally');
     }
 
-    const list = getLocal('opf_companies_v2', INITIAL_COMPANIES);
+    const list = getLocal(CURRENT_COMPANIES_KEY, INITIAL_COMPANIES);
     return list.find(c => c.slug === slug || String(c.id) === String(slug)) || null;
   },
 
@@ -195,7 +195,7 @@ export const companyService = {
       console.log('API offline, creating company locally');
     }
 
-    const list = getLocal('opf_companies_v2', INITIAL_COMPANIES);
+    const list = getLocal(CURRENT_COMPANIES_KEY, INITIAL_COMPANIES);
     const slug = companyData.slug || companyData.company_name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     const newComp = {
       ...companyData,
@@ -206,7 +206,7 @@ export const companyService = {
       status: companyData.status || 'active'
     };
     list.unshift(newComp);
-    setLocal('opf_companies_v2', list);
+    setLocal(CURRENT_COMPANIES_KEY, list);
     return { success: true, message: 'Company created successfully', slug };
   },
 
@@ -218,11 +218,11 @@ export const companyService = {
       console.log('API offline, updating company locally');
     }
 
-    const list = getLocal('opf_companies_v2', INITIAL_COMPANIES);
+    const list = getLocal(CURRENT_COMPANIES_KEY, INITIAL_COMPANIES);
     const idx = list.findIndex(c => c.id === companyData.id);
     if (idx !== -1) {
       list[idx] = { ...list[idx], ...companyData };
-      setLocal('opf_companies_v2', list);
+      setLocal(CURRENT_COMPANIES_KEY, list);
     }
     return { success: true, message: 'Company updated successfully' };
   },
@@ -235,9 +235,9 @@ export const companyService = {
       console.log('API offline, deleting company locally');
     }
 
-    let list = getLocal('opf_companies_v2', INITIAL_COMPANIES);
+    let list = getLocal(CURRENT_COMPANIES_KEY, INITIAL_COMPANIES);
     list = list.filter(c => c.id !== id);
-    setLocal('opf_companies_v2', list);
+    setLocal(CURRENT_COMPANIES_KEY, list);
     return { success: true, message: 'Company deleted' };
   },
 

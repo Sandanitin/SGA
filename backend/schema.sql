@@ -44,30 +44,25 @@ CREATE TABLE IF NOT EXISTS `companies` (
 INSERT INTO `companies` 
 (`company_name`, `slug`, `logo`, `short_description`, `full_description`, `website_url`, `discount`, `promo_code`, `deal_url`, `featured`, `status`, `max_funding`, `profit_split`, `start_price`, `rating`, `platform`) 
 VALUES
-('FTMO', 'ftmo', 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&auto=format&fit=crop&q=80', 
-'Industry leading prop firm with up to 90% profit split, instant scaling up to $2,000,000, and fast bi-weekly payouts.', 
-'FTMO is a widely acclaimed proprietary trading platform operating globally. Traders receive evaluation accounts up to $200,000 with comprehensive educational resources, performance coaching, and top-tier liquidity execution.', 
-'https://ftmo.com', '10% OFF', 'SGA', 'https://ftmo.com', 1, 'active', '$200,000', '90/10', '$170', 4.9, 'MT4, MT5, cTrader, DXtrade'),
+('Lucid Trading', 'lucid-trading', 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&auto=format&fit=crop&q=80', 
+'DGT Trusted - Most Popular. 15-minute payouts, 90% profit split, instant funding, no consistency rule.', 
+'Lucid Trading is a premier futures prop trading firm providing instant funding, zero consistency rules, 90% profit splits, and ultra-fast 15-minute daily payouts.', 
+'https://lucidtrading.com', '40% OFF', 'DGT', 'https://lucidtrading.com', 1, 'active', '$750,000', '90/10', '$193', 4.8, 'Tradovate, NinjaTrader'),
 
-('Funding Pips', 'funding-pips', 'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=200&auto=format&fit=crop&q=80', 
-'Built by traders for traders. Lowest evaluation fees, zero minimum trading days, and 5-day payout cycles.', 
-'Funding Pips provides an accessible, trader-centric environment designed to maximize funded capital growth. Enjoy 5-day payout intervals, raw spreads, and flexible risk parameters.', 
-'https://fundingpips.com', '20% OFF', 'PIPS20', 'https://fundingpips.com', 1, 'active', '$300,000', '85/15 - 90%', '$32', 4.8, 'cTrader, Match-Trader'),
+('Take Profit Trader', 'take-profit-trader', 'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=200&auto=format&fit=crop&q=80', 
+'DGT Trusted - Best Daily Payouts. 1-hour payouts, 80% profit split, and trader-friendly evaluation rules.', 
+'Take Profit Trader gives futures traders direct access to funded accounts with daily payouts, 1-hour withdrawal speeds, and high profit share options.', 
+'https://takeprofittrader.com', '50% OFF', 'DGT', 'https://takeprofittrader.com', 1, 'active', '$750,000', '80/20', '$180', 4.7, 'Tradovate, NinjaTrader, Rithmic'),
+
+('Tradeify', 'tradeify', 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=200&auto=format&fit=crop&q=80', 
+'DGT Trusted - Best Instant Funding. 1-hour payouts, 90% profit split, instant funding, no consistency rule.', 
+'Tradeify specializes in instant funding evaluation models for futures traders, featuring 90% profit split, fast 1-hour payouts, and raw execution.', 
+'https://tradeify.co', '40% OFF', 'DGT', 'https://tradeify.co', 1, 'active', '$750,000', '90/10', '$99', 4.7, 'Tradovate, NinjaTrader'),
 
 ('Apex Trader Funding', 'apex-trader-funding', 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=200&auto=format&fit=crop&q=80', 
 'The #1 Futures prop firm offering massive evaluation sales, 100% of first $25k profits, and daily payouts.', 
 'Apex Trader Funding leads the futures trading industry with generous evaluation discounts, rapid evaluation pass rates, and smooth payout distributions through Tradovate and NinjaTrader.', 
-'https://apextraderfunding.com', '80% OFF', 'APEX80', 'https://apextraderfunding.com', 1, 'active', '$300,000', '90/10', '$147', 4.7, 'Rithmic, Tradovate, NinjaTrader'),
-
-('The 5%ers', 'the-5ers', 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=200&auto=format&fit=crop&q=80', 
-'Hyper-growth account scaling, instant real capital funding, and risk-free scaling program for forex traders.', 
-'The 5%ers offers immediate funding models and traditional evaluation pathways designed for long-term career traders.', 
-'https://the5ers.com', '10% OFF', 'FIVESGA', 'https://the5ers.com', 0, 'active', '$4,000,000', '100%', '$95', 4.8, 'MT5'),
-
-('FundedNext', 'fundednext', 'https://images.unsplash.com/photo-1618042164219-62c820f10723?w=200&auto=format&fit=crop&q=80', 
-'Get paid 15% profit split even during the evaluation phase! No time limits and raw spread execution.', 
-'FundedNext rewards consistent traders from day one with a unique 15% profit share during challenge phases, robust trading dashboards, and dedicated account manager support.', 
-'https://fundednext.com', '15% OFF', 'NEXT15', 'https://fundednext.com', 1, 'active', '$200,000', '90/10', '$49', 4.9, 'MT4, MT5, cTrader')
+'https://apextraderfunding.com', '80% OFF', 'APEX80', 'https://apextraderfunding.com', 1, 'active', '$300,000', '90/10', '$147', 4.7, 'Rithmic, Tradovate, NinjaTrader')
 ON DUPLICATE KEY UPDATE `company_name`=`company_name`;
 
 -- 3. Giveaway Entries Table

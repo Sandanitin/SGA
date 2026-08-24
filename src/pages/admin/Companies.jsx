@@ -251,7 +251,7 @@ export function Companies() {
                   <input 
                     type="text" 
                     className="form-input" 
-                    placeholder="e.g. ftmo"
+                    placeholder="e.g. fundednext"
                     value={form.slug}
                     onChange={(e) => setForm({ ...form, slug: e.target.value })}
                   />
